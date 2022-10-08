@@ -218,8 +218,9 @@ html {
 
 /* COLORS //////////////////////////////////////////////////////////////////// */
 :root {
-  --color1: black;
-  --color2: white;
+  --color1: hsl(220, 100%, 10%);
+  --color2: hsl(50, 100%, 80%);
+  --color3: hsl(0, 100%, 50%);
   color: var(--color1);
   background-color: var(--color2);
 }
@@ -230,4 +231,33 @@ svg path {
 
 dialog {
   color: var(--color1);
+}
+
+/* INTERFACE //////////////////////////////////////////////////////// */
+.interface-style1 {
+  transition-property: background-color, transform, outline;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  outline: 0.3rem solid transparent;
+  background-color: hsla(0, 100%, 50%, 0.5);
+  border: 0.1rem solid var(--color2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interface-style1:hover, .interface-style1:focus {
+  background-color: var(--color1);
+  transform: scale(1.3);
+  outline: 0.3rem solid var(--color1);
+}
+
+.interface-style2 {
+  border-radius: 50% 50% 0 0;
+}
+
+.interface-style2:hover, .interface-style2:focus {
+  background-color: var(--color2);
+  color: var(--color1);
+  transform: scale(1.3) translateY(-0.2rem);
 }

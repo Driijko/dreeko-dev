@@ -3,12 +3,13 @@
   // IMPORT SCRIPTS --------------------------------------------
   import site from "./scripts/site";
 
-  // IMPORT COMPONENTS ------------------------------------------
-  // import Splash from "./Splash.svelte";
+  // IMPORT PAGE COMPONENTS ------------------------------------------
+  import Splash from "./pages/Splash.svelte";
   import LoadingScreen from "./pages/LoadingScreen.svelte";
+  import Home from "./pages/Home.svelte";
 
   // LOCAL STATE ------------------------------------------------
-  let page = "loading-screen";
+  let page = "home";
   let pageExitDuration = 3000;
   let restartCount = 0;
 
@@ -38,11 +39,14 @@
     {/key}
 
   {:else if page === "splash"}
-    <!-- {#key restartCount}
+    {#key restartCount}
       <Splash 
         on:page-link={handlePageLink} 
         {pageExitDuration}
       />
-    {/key} -->
+    {/key}
+  
+  {:else if page === "home"}
+    <Home />
   {/if}
 </div>

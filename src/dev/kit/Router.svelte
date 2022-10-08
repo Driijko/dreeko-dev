@@ -4,8 +4,8 @@
   import site from "./scripts/site.js";
 
   // IMPORT COMPONENTS ------------------------------------------
-  import Splash from "./Splash.svelte";
-  import LoadingScreen from "./LoadingScreen.svelte";
+  import Splash from "./pages/Splash.svelte";
+  import LoadingScreen from "./pages/LoadingScreen.svelte";
 
   // LOCAL STATE ------------------------------------------------
   let page = "splash";
