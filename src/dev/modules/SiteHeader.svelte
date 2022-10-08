@@ -1,8 +1,6 @@
 <!-- SCRIPTS ////////////////////////////////////////////////////////////////// -->
 <script>
   export let openSiteMenuModal;
-  export let openLogInModal;
-  export let openSocialMediaModal;
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////////////// -->
@@ -107,6 +105,10 @@ header > * {
 /* CONFIGURATION 3 /////////////////////// */
 @media only screen and (min-width: 600px) {
 
+  header {
+    height: 9rem;
+  }
+
   #site-header-area1 {
     width: 100%;
     height: initial;
@@ -126,10 +128,26 @@ header > * {
     display: flex;
     justify-content: space-evenly;
     padding: 0 5rem;
+    bottom: -0.1%;
   }
 
   #site-header-area4 {
     display: none;
+  }
+
+  #site-header-area2 li {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+
+  #site-header-area2 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
   }
 }
 
@@ -149,7 +167,6 @@ header > * {
     display: block;
     width: initial;
     right: 3%;
-    bottom: -0.1%;
   }
   
   #site-header-area2 ul {
@@ -158,17 +175,9 @@ header > * {
     column-gap: 2rem;
   }
 
-  #site-header-area2 li {
-    display: flex;
-    justify-content: center;
-    /* width: 6rem; */
-  }
-
   #site-header-area2 a {
-    text-align: center;
-    width: 100%;
     padding: 0.7rem 0.5rem 0.2rem 0.5rem;
-    border: 0.2rem solid var(--color2);
+    border: 0.1rem solid var(--color2);
     border-bottom: none;
   }
 }
