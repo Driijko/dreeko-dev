@@ -153,8 +153,8 @@
     line {
       stroke-width: 3vw;
     }
-    h2, #scroll-indicator {
+    /* h2, #scroll-indicator {
       animation: none;
-    }
+    } */
   }
 </style>

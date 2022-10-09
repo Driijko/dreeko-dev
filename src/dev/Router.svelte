@@ -9,7 +9,7 @@
   import Home from "./pages/Home.svelte";
 
   // LOCAL STATE ------------------------------------------------
-  let page = "home";
+  let page = "loading-screen";
   let pageExitDuration = 3000;
   let restartCount = 0;
 
