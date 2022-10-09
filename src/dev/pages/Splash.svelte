@@ -35,7 +35,7 @@
     <span>&middot</span>
     <span>Animation</span>
   </p>
-  <a on:click|preventDefault={()=> pageExit(splashPage, "loading-screen", pageExitDuration)} class="interface-style1" href="">Enter</a>
+  <a on:click|preventDefault={()=> pageExit(splashPage, "home", pageExitDuration)} class="interface-style1" href="">Enter</a>
   <svg>
     <rect class="rects" x="0%" y="0%" />
     <rect class="rects" x="50%" y="0%" />
