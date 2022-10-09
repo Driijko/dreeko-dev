@@ -53,6 +53,9 @@ header {
   background-color: var(--color1);
   color: var(--color2);
   position: relative;
+  border-bottom: 0.1rem solid var(--color2);
+  opacity: 0;
+  animation: fade-in 2s forwards ease-out;
 }
 
 header > * {

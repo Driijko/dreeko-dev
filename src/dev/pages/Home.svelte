@@ -6,6 +6,7 @@
   // IMPORT MODULE COMPONENTS ----------------------------------------
   import SiteHeader from "../modules/SiteHeader.svelte";
   import SiteMenuModal from "../modules/SiteMenuModal.svelte";
+  import HomeHeader from "../modules/home/HomeHeader.svelte";
 
   let modalsOpen = {
     siteMenu: false,
@@ -27,6 +28,7 @@
   <SiteHeader 
     openSiteMenuModal={()=> openModal("siteMenu")}
   />
+  <HomeHeader />
   <SiteMenuModal
     open={modalsOpen.siteMenu}
     closeModal={()=> closeModal("siteMenu")}
