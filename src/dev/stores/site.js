@@ -6,7 +6,9 @@ const pageExitDuration = 3000;
 
 // SETUP ----------------------------------------------------------
 export function setUp() {
+  // Page exit duration
   document.documentElement.style.setProperty("--page-exit-duration", `${pageExitDuration}ms`);
+  document.documentElement.style.setProperty("--viewport-height", `${window.innerHeight}px`);
 }
 
 function createCurrentPage() {
