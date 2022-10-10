@@ -43,8 +43,8 @@
     <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
   </svg>
   <svg id="animation">
-    <circle cx="0%" cy="0%" r="40%" fill="white" />
-    <circle cx="100%" cy="100%" r="40%" fill="white" />
+    <circle cx="0%" cy="0%" r="30%" fill="white" />
+    <circle cx="100%" cy="100%" r="30%" fill="white" />
     <line class="line-group1" x1="-5%" y1="-5%" x2="100%" y2="100%" />
     <line class="line-group1" x1="0%" y1="-5%" x2="100%" y2="100%" />
     <line class="line-group1" x1="5%" y1="-5%" x2="100%" y2="100%" />
@@ -153,8 +153,5 @@
     line {
       stroke-width: 3vw;
     }
-    /* h2, #scroll-indicator {
-      animation: none;
-    } */
   }
 </style>
