@@ -2,6 +2,7 @@
 <script>
   // IMPORT STORES --------------------------------------------------
   import { currentPage } from "../stores/site.js";
+  import { modals } from "../stores/page.js";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
   let home;
@@ -10,8 +11,9 @@
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
   Home Page
-  <a href="./loading-screen" on:click|preventDefault={()=> currentPage.setCurrentPage(home, "loading-screen")} >Loading Screen</a>
-  <a href="./splash" on:click|preventDefault={()=> currentPage.setCurrentPage(home, "splash")} >Splash</a>
+  <p>{$modals.siteMenu}</p>
+  <button on:click={()=> modals.open("siteMenu")} type="button" >Modals Open</button>
+  <button on:click={()=> modals.close("siteMenu")} type="button" >Modals Close</button>
 </div>
 
 <style>
@@ -19,5 +21,8 @@
     display: block;
     border: 4px solid red;
     margin: 1rem;
+  }
+  button {
+    border: 4px solid red;
   }
 </style>
