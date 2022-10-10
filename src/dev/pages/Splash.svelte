@@ -60,11 +60,6 @@
     color: var(--color2);
   }
 
-  @keyframes fade-in {
-    from {opacity: 0;}
-    to {opacity:1;}
-  }
-
   svg {
     z-index: -1;
     position: absolute;

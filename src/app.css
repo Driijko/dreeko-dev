@@ -254,9 +254,6 @@ dialog {
 
 .interface-style2 {
   border-radius: 50% 50% 0 0;
-  transition-property: transform;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
 }
 
 .interface-style3 {
