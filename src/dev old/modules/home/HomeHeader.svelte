@@ -2,7 +2,7 @@
 <script>
   // IMPORT SCRIPTS ---------------------------------------------------
   import { onMount } from "svelte";
-    import { get_spread_object } from "svelte/internal";
+
 
   // LIFECYCLE --------------------------------------------------------
   onMount(()=> {
@@ -37,7 +37,7 @@
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////// -->
-<div>
+<header>
   <h2>Aesthetically-driven<br/> Web Development</h2>
   <svg id="scroll-indicator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
@@ -90,11 +90,11 @@
     <line class="line-group2" x1="0%" y1="0%" x2="5%" y2="100%" />
     <line class="line-group2" x1="0%" y1="0%" x2="0%" y2="100%" />
   </svg>
-</div>
+</header>
 
 <!-- STYLES //////////////////////////////////////////////////////////// -->
 <style>
-  div {
+  header {
     height: calc(var(--vph) - 7.5rem);
     position: relative;
     display: flex;

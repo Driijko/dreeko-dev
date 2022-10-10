@@ -1,5 +1,5 @@
 <script>
-  import Router from "./dev/Router.svelte";
+  import Site from "./dev/Site.svelte";
 </script>
 
-<Router />
+<Site />

@@ -47,6 +47,7 @@
     {/key}
   
   {:else if page === "home"}
-    <Home />
+    <Home {pageExitDuration} on:page-link={handlePageLink}
+     />
   {/if}
 </div>

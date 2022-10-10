@@ -1,36 +1,23 @@
-<!-- SCRIPTS ////////////////////////////////////////////////////// -->
+<!-- SCRIPTS /////////////////////////////////////////////////// -->
 <script>
-  // IMPORT SCRIPTS -------------------------------------------------
-  import page from "../scripts/page.js";
+  // IMPORT STORES --------------------------------------------------
+  import { currentPage } from "../stores/site.js";
 
-  // IMPORT MODULE COMPONENTS ----------------------------------------
-  import SiteHeader from "../modules/SiteHeader.svelte";
-  import SiteMenuModal from "../modules/SiteMenuModal.svelte";
-  import HomeHeader from "../modules/home/HomeHeader.svelte";
-
-  let modalsOpen = {
-    siteMenu: false,
-  };
-
-  // EVENT HANDLERS ---------------------------------------------------
-  function openModal(modal) {
-    modalsOpen[modal] = true;
-    modalsOpen = modalsOpen;
-  };
-
-  function closeModal(modal) {
-    modalsOpen[modal] = false;
-    modalsOpen = modalsOpen;
-  }
+  // ELEMENT / COMPONENT REFERENCES ---------------------------------
+  let home;
 </script>
 
-<div>
-  <SiteHeader 
-    openSiteMenuModal={()=> openModal("siteMenu")}
-  />
-  <HomeHeader />
-  <SiteMenuModal
-    open={modalsOpen.siteMenu}
-    closeModal={()=> closeModal("siteMenu")}
-  />
+<!-- MARKUP /////////////////////////////////////////////////////////// -->
+<div bind:this={home} class="page">
+  Home Page
+  <a href="./loading-screen" on:click|preventDefault={()=> currentPage.setCurrentPage(home, "loading-screen")} >Loading Screen</a>
+  <a href="./splash" on:click|preventDefault={()=> currentPage.setCurrentPage(home, "splash")} >Splash</a>
 </div>
+
+<style>
+  a {
+    display: block;
+    border: 4px solid red;
+    margin: 1rem;
+  }
+</style>

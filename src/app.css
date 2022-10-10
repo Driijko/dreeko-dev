@@ -148,6 +148,10 @@ svg {
   z-index: -1;
 }
 
+.page {
+  transition: opacity var(--page-exit-duration) ease-out;
+}
+
 /* COVERING MODAL //////////////// */
 .covering-modal {
   position: fixed;

@@ -1,10 +1,14 @@
 <!-- SCRIPTS ////////////////////////////////////////////////////////////////// -->
 <script>
+  // PROPS --------------------------------------------------------------
   export let openSiteMenuModal;
+  export let dom;
+  export let pageExit;
+  export let pageExitDuration;
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////////////// -->
-<header>
+<header bind:this={dom}>
 
   <div id="site-header-area1">
     <h1>DREEKO</h1>
@@ -20,7 +24,7 @@
   <nav id="site-header-area2">
     <ul>
       <li>
-        <a class="interface-style2" href="" >Portfolio</a>
+        <a on:click|preventDefault={()=> pageExit(dom, "splash", pageExitDuration)} class="interface-style2" href="" >Portfolio</a>
       </li>
       <li>
         <a class="interface-style2" href="" >Technology</a>
