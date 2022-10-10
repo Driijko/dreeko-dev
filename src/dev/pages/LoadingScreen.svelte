@@ -10,12 +10,12 @@
   let loadingScreen;
 
   // LIFECYCLE --------------------------------------------------
-  // onMount(()=> {
-  //   window.addEventListener("load", ()=> currentPage.setCurrentPage(loadingScreen, "splash"));
-  //   return ()=> {
-  //     window.removeEventListener("load", ()=> currentPage.setCurrentPage(loadingScreen, "splash"));
-  //   };
-  // });
+  onMount(()=> {
+    window.addEventListener("load", ()=> currentPage.setCurrentPage(loadingScreen, "splash"));
+    return ()=> {
+      window.removeEventListener("load", ()=> currentPage.setCurrentPage(loadingScreen, "splash"));
+    };
+  });
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
