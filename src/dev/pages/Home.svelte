@@ -4,16 +4,20 @@
   import { currentPage } from "../stores/site.js";
   import { modals } from "../stores/page.js";
 
+  // IMPORT COMPONENTS ---------------------------------------------
+  import Pamphlet from "./types/Pamphlet.svelte";
+  import SiteMenuModal from "../layers/SiteMenuModal.svelte";
+
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
   let home;
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
-  Home Page
-  <p>{$modals.siteMenu}</p>
-  <button on:click={()=> modals.open("siteMenu")} type="button" >Modals Open</button>
-  <button on:click={()=> modals.close("siteMenu")} type="button" >Modals Close</button>
+  <Pamphlet>
+
+  </Pamphlet>
+  <SiteMenuModal />
 </div>
 
 <style>
