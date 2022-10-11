@@ -4,10 +4,11 @@
   import { onMount } from "svelte";
   // IMPORT STORES --------------------------------------------------
   import { currentPage } from "../stores/site.js";
-  import { modals } from "../stores/page.js";
 
   // IMPORT COMPONENTS ---------------------------------------------
-  import Pamphlet from "./types/Pamphlet.svelte";
+  import Pamphlet from "../layers/Pamphlet.svelte";
+  import SiteHeader from "../modules/SiteHeader.svelte";
+  import HomeMain from "../modules/home/HomeMain.svelte";
   import SiteMenuModal from "../layers/SiteMenuModal.svelte";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
@@ -21,8 +22,9 @@
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
-  <Pamphlet>
-
+  <Pamphlet totalSnapPointsOptions={[2, 3]}>
+    <SiteHeader />
+    <HomeMain />
   </Pamphlet>
   <SiteMenuModal />
 </div>

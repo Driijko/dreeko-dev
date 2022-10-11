@@ -95,7 +95,7 @@
 <!-- STYLES //////////////////////////////////////////////////////////// -->
 <style>
   header {
-    height: calc(var(--vph) - 7.5rem);
+    height: calc(var(--viewport-height) - 7.5rem);
     position: relative;
     display: flex;
     justify-content: center;
@@ -144,6 +144,9 @@
   }
 
   @media screen and (min-width:600px) {
+    header {
+      height: calc(var(--viewport-height) - 9rem);
+    }
     h2 {
       font-size: 3rem;
     }

@@ -4,7 +4,7 @@ import { writable, get } from "svelte/store";
 // SETTINGS --------------------------------------------------------
 const pageExitDuration = 3000;
 const resizeDelay = 2000;
-const startingPageName = "loading-screen";
+const startingPageName = "home";
 
 // RESET COUNT ----------------------------------------------------
 function createResetCount() {

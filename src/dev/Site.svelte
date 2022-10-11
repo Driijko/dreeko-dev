@@ -1,7 +1,7 @@
 <!-- SCRIPTS ////////////////////////////////////////////////////// -->
 <script>
   // IMPORT STORES & SCRIPTS --------------------------------------------
-  import {setUp, currentPage, currentPageName, resetCount} from "./stores/site.js";
+  import {setUp, currentPageName, resetCount} from "./stores/site.js";
 
   // IMPORT PAGE COMPONENTS -------------------------------------------
   import LoadingScreen from "./pages/LoadingScreen.svelte";

@@ -200,12 +200,18 @@ svg {
   .portrait {
     display: none;
   }
+
+  .cruncher {
+    height: var(--viewport-height);
+  }
 }
 
 @media only screen and (orientation: portrait) {
   .landscape {
     display: none;
   }
+
+
 }
 
 /* FONT-SIZE AND FAMILY /////////////////////////////////////////////////////// */
@@ -223,6 +229,7 @@ html {
 /* COLORS //////////////////////////////////////////////////////////////////// */
 :root {
   --color1: hsl(220, 100%, 10%);
+  --color1-1: hsl(220, 100%, 20%);
   --color2: hsl(50, 100%, 80%);
   --color3: hsl(0, 100%, 50%);
   --color3-1: hsl(0, 100%, 35%);
