@@ -225,6 +225,7 @@ html {
   --color1: hsl(220, 100%, 10%);
   --color2: hsl(50, 100%, 80%);
   --color3: hsl(0, 100%, 50%);
+  --color3-1: hsl(0, 100%, 35%);
   color: var(--color1);
   background-color: var(--color2);
 }
@@ -251,9 +252,9 @@ dialog {
 }
 
 .interface-style1:hover, .interface-style1:focus {
-  background-color: var(--color1);
+  background-color: var(--color3-1);
   transform: scale(1.3);
-  outline: 0.3rem solid var(--color1);
+  outline: 0.3rem solid var(--color3-1);
 }
 
 .interface-style2 {

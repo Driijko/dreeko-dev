@@ -7,7 +7,7 @@ function createModals() {
 
   return {
     subscribe,
-    open: (modal)=> update((modals) => {
+    open: modal => update((modals) => {
       return {...modals, [modal]: true};
     }),
     close: modal => update(modals => {
