@@ -1,5 +1,7 @@
 <!-- SCRIPTS /////////////////////////////////////////////////// -->
 <script>
+  // IMPORT SCRIPTS ------------------------------------------------
+  import { onMount } from "svelte";
   // IMPORT STORES --------------------------------------------------
   import { currentPage } from "../stores/site.js";
   import { modals } from "../stores/page.js";
@@ -10,6 +12,11 @@
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
   let home;
+
+  // LIFECYCLE --------------------------------------------------------
+  onMount(()=> {
+    currentPage.set(home);
+  });
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->

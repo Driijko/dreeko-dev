@@ -4,16 +4,17 @@
   import { onMount } from "svelte";
 
   // IMPORT STORES --------------------------------------------------
-  import { currentPage } from "../stores/site.js";
+  import { currentPage, pageExit } from "../stores/site.js";
 
   // ELEMENT / COMPONENT REFERENCES -------------------------------
   let loadingScreen;
 
   // LIFECYCLE --------------------------------------------------
   onMount(()=> {
-    window.addEventListener("load", ()=> currentPage.setCurrentPage(loadingScreen, "splash"));
+    currentPage.set(loadingScreen);
+    window.addEventListener("load", ()=> pageExit("splash"));
     return ()=> {
-      window.removeEventListener("load", ()=> currentPage.setCurrentPage(loadingScreen, "splash"));
+      window.removeEventListener("load", ()=> pageExit("splash"));
     };
   });
 </script>

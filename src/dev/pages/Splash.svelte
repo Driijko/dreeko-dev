@@ -4,13 +4,14 @@
   import { onMount } from "svelte";
 
   // IMPORT STORES --------------------------------------------------
-  import { currentPage } from "../stores/site.js";
+  import { currentPage, pageExit } from "../stores/site.js";
 
   // ELEMENT / COMPONENT REFERENCES --------------------------------
   let splash;
 
   // LIFECYCLE ----------------------------------------------
   onMount(()=> {
+    currentPage.set(splash);
     gsap.set(".rects", {transformOrigin: "50% 50%"});
     gsap.to(".rects", {
       duration: 20,
@@ -31,7 +32,7 @@
     <span>&middot</span>
     <span>Animation</span>
   </p>
-  <a on:click|preventDefault={()=> currentPage.setCurrentPage(splash,"home")} class="interface-style1" href="">Enter</a>
+  <a on:click|preventDefault={()=> pageExit("home")} class="interface-style1" href="">Enter</a>
   <svg>
     <rect class="rects" x="0%" y="0%" />
     <rect class="rects" x="50%" y="0%" />

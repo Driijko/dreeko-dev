@@ -1,7 +1,7 @@
 <!-- SCRIPTS ////////////////////////////////////////////////////// -->
 <script>
   // IMPORT STORES & SCRIPTS --------------------------------------------
-  import {setUp, currentPage, resetCount} from "./stores/site.js";
+  import {setUp, currentPage, currentPageName, resetCount} from "./stores/site.js";
 
   // IMPORT PAGE COMPONENTS -------------------------------------------
   import LoadingScreen from "./pages/LoadingScreen.svelte";
@@ -15,13 +15,13 @@
 
 <!-- MARKUP --------------------------------------------------- -->
 <div>
-  {#if $currentPage === "loading-screen"}
+  {#if $currentPageName === "loading-screen"}
     <LoadingScreen />
-  {:else if $currentPage === "splash"}
+  {:else if $currentPageName === "splash"}
     {#key $resetCount}
       <Splash />
     {/key}
-  {:else if $currentPage === "home"}
+  {:else if $currentPageName === "home"}
     <Home />
   {/if}
 </div>
