@@ -17,7 +17,7 @@
       <h4>Quick Page Load</h4>
     </li>
     <li>
-      <div class="animation">
+      <div id="animation-container2" class="animation">
         <div id="animation5">Me</div>
         <div id="animation6">No<br/> Me</div>
       </div>
@@ -45,12 +45,13 @@
   h3 {
     display: none;
   }
-  ul {
-    /* border: 4px solid green; */
-  }
   li {
     height: var(--viewport-height);
-    padding-top: 6.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
   }
   h4 {
     height: 15%;
@@ -61,13 +62,25 @@
     font-size: 1.5rem;
     background-color: var(--color1-2);
     color: var(--color2);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
   }
   .animation {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85%;
+    width: 100vw;
+    height: 100vw;
+    max-width: 600px;
+    max-height: 600px;
     position: relative;
+    top: 2.8%;
+  }
+  @media screen and (min-height: 600px) {
+    .animation {
+      top: 0%;
+    }
   }
   @keyframes rotate1 {
     from {transform: rotateY(0deg);}
@@ -88,9 +101,9 @@
     position: absolute;
     width: 90%;
     height: 90%;
-    border: 1rem solid var(--color1-1);
   }
   #animation1, #animation2 {
+    border: 1rem solid var(--color1-1);
     border-radius: 50%;
     opacity: 0;
     animation: fade-in-out 2s infinite;
@@ -126,11 +139,11 @@
     width: 10rem;
   }
   @keyframes shuffle {
-    0% {transform:translate(0vw);}
-    25% {transform: translate(0vw);}
-    50% {transform: translate(-70vw);}
-    75% {transform: translate(-70vw);}
-    100% {transform: translate(0vw);}
+    0% {transform:translate(0%);}
+    25% {transform: translate(0%);}
+    50% {transform: translate(-130%);}
+    75% {transform: translate(-130%);}
+    100% {transform: translate(0%);}
   }
   #animation5, #animation6 {
     width: 60%;
@@ -142,34 +155,38 @@
     text-align: center;
     color: var(--color2);
     font-size: 4rem;
+    background-color: var(--color1-2);
   }
   #animation5 {
-    background-color: var(--color3-1);
+    /* background-color: var(--color1-2); */
     animation: shuffle 2.5s 0.2s ease-in-out infinite;
   }
   #animation6 {
-    background-color: var(--color1);
-    left: 90vw;
+    /* background-color: var(--color1); */
+    left: 130%;
     animation: shuffle 2.5s ease-in-out infinite;
   }
   #smartphone {
     position: absolute;
-    width: 14rem;
-    left: 3%;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    padding: 3% 25% 3% 0%;
   }
   #speech-bubble {
     position: absolute;
-    left: 40%;
-    top: 0%;
-    width: 11rem;
+    width: 100%;
+    height: 100%;
+    padding: 0% 5% 45% 40%;
     color: var(--color1-1);
   }
   #speech {
     position: absolute;
-    left: 60%;
-    top: 8%;
+    width: 100%;
+    height: 100%;
+    padding: 11% 0% 30% 35%;
     line-height: 1.3;
-    font-size: 1.7rem;
+    font-size: 7vw;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
     text-align: center;
@@ -193,7 +210,7 @@
       hsl(180, 100%, 50%)
     );
     animation: fade-in-out2 1s infinite ease-in-out;
-  }
+  } 
 
   #animation8 {
     background-image: linear-gradient(
@@ -203,6 +220,80 @@
     animation: fade-in-out2 1s 0.5s infinite ease-in-out;
   }
 
+  @media screen and (min-width: 600px) {
+    #speech {
+      font-size: 2.3rem;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    section {
+      background-color: var(--color1);
+      position: relative;
+    }
+    h3 {
+      position: absolute;
+      color: var(--color2);
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.3;
+      display: block;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 6vh;
+      font-size: 3vw;
+      text-align: center;
+    }
+    ul {
+      display: flex;
+      height: var(--viewport-height);
+      padding-top: 10%;
+      justify-content: space-evenly;
+      align-items: flex-end;
+    }
+    li {
+      width: 30vw;
+      height: 100%;
+      background-color: var(--color2);
+      border-radius: 1rem 1rem 0 0;
+      border: 0.6rem solid var(--color1-1);
+      border-bottom-width: 10vh;
+    }
+    .animation {
+      max-width: none;
+      max-height: none;
+      width: 25vw;
+      height: 25vw;
+    }
+    #animation-container2 {
+      overflow: hidden;
+      width: 100%;
+    }
+    h4 {
+      bottom: -10vh;
+      font-size: 2vw;
+      background-color: transparent;
+    }
+    #animation3 {
+      font-size: 2rem;
+    }
+    #animation4 p {
+      font-size: 2rem;
+    }
+    #animation4 svg {
+      width: 40%;
+    }
+    #animation6 {
+      left: 100%;
+    }
+    #speech {
+      font-size: 1.8vw;
+    }
+  }
   
 
 </style>

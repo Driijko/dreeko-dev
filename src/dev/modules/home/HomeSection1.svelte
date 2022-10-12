@@ -70,20 +70,18 @@
       padding-top: 3%;
       justify-content: center;
       align-items: center;
-      background-color: var(--color2-1);
+      background-color: var(--color2);
     }
     h3 {
-      font-size: 1.5rem;
       font-family: "Montserrat", sans-serif;
       line-height: 1.3;
-      visibility: visible;
+      display: block;
       position: absolute;
       width: 100%;
       left: 0;
       top: 6vh;
-      text-align: left;
+      text-align: center;
       font-size: 2rem;
-      padding-left: 3vw;
       color: var(--color1);
     }
     div {

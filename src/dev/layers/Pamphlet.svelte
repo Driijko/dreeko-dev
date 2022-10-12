@@ -14,7 +14,6 @@
   let totalSnapPoints;
   if (window.innerWidth >= window.innerHeight) {
     totalSnapPoints = totalSnapPointsOptions[0];
-    console.log(window.innerWidth);
   } else {
     totalSnapPoints = totalSnapPointsOptions[1];
   };
@@ -72,7 +71,7 @@
   // LIFECYCLE -------------------------------------------------
   onMount(()=> {
 
-    currentSnapPoint = 4;
+    currentSnapPoint = 1;
     snap(true, false);
 
     snapScrollContainer.addEventListener(
