@@ -18,11 +18,13 @@
   // LOCAL STATE -----------------------------------------------
   let overlayVisible = 0;
 
-  // UPWARDS PROPS ------------------------------------------------
+  // TRACKING  ------------------------------------------------
   function trackCurrentSnapPoint(snapPoint) {
     if (window.innerWidth < window.innerHeight) {
       if (snapPoint > 0 && snapPoint < 3) {
         overlayVisible = 1;
+      } else if (snapPoint > 2 && snapPoint < 6) {
+        overlayVisible = 2;
       } else {
         overlayVisible = 0;
       }
@@ -38,14 +40,18 @@
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
   <Pamphlet {trackCurrentSnapPoint}
-    totalSnapPointsOptions={[2, 3]}
+    totalSnapPointsOptions={[3, 6]}
   >
     <SiteHeader />
     <HomeMain />
   </Pamphlet>
-  <p aria-hidden="true" class:overlay-visible={overlayVisible === 1}
-  >
-  Pixel-Perfect Responsive Design
+
+  <p aria-hidden="true" class:overlay-visible={overlayVisible === 1}>
+    Pixel-Perfect <br/> Responsive Design
+  </p>
+
+  <p aria-hidden="true" class:overlay-visible={overlayVisible === 2}>
+    Optimized for <br/> High Performance
   </p>
   <SiteMenuModal />
 </div>
@@ -54,21 +60,36 @@
 <style>
  p {
   position: fixed;
-  background-color: var(--color2);
   width: 100%;
   text-align: center;
-  font-size: 2rem;
-  padding: 2rem 0;
+  font-size: 1.5rem;
+  padding: 1rem 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: var(--color1-2);
-  background-color: var(--color1-1);
-  border-bottom: 0.3rem solid var(--color1-2);
   pointer-events: none;
   transition: opacity 0.5s ease-out;
   opacity: 0;
+  line-height: 1.3;
+ }
+ p:nth-of-type(1) {
+  color: var(--color1-2);
+  background-color: var(--color1-1);
+  border-bottom: 0.3rem solid var(--color1-2);
+ }
+ p:nth-of-type(2) {
+  background-color: var(--color2-1);
+  border-bottom: 0.4rem solid var(--color1-1);
  }
  .overlay-visible {
   opacity: 1;
+ }
+ @media screen and (min-width: 650px) {
+  p {
+    font-size: 2rem;
+    padding: 4vh 0;
+  }
+  br {
+    display: none;
+  }
  }
 </style>
