@@ -71,7 +71,7 @@
   // LIFECYCLE -------------------------------------------------
   onMount(()=> {
 
-    currentSnapPoint = 5;
+    currentSnapPoint = 2;
     snap(true, false);
 
     snapScrollContainer.addEventListener(

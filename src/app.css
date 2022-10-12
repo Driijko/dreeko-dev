@@ -244,10 +244,6 @@ svg:not(.avoid-auto-fill) path {
   fill: currentColor;
 }
 
-svg:not(.avoid-auto-fill) {
-  border: 1px solid red;
-}
-
 dialog {
   color: var(--color1);
 }

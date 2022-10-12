@@ -71,14 +71,14 @@
     justify-content: center;
     row-gap: 0.1rem;
     column-gap: 0.1rem;
-    /* align-content: center; */
+    align-content: center;
   }
   li {
     position: relative;
     background-color: var(--color1-1);
     width: 49%;
-    border: 1px solid green;
     color: none;
+    height: 28vw;
   }
   li:nth-of-type(1) {
     color: #DD4B25;
@@ -98,28 +98,56 @@
   li:nth-of-type(6) {
     color: #FF3E00
   }
+  li:nth-of-type(7) {
+    color: #8AC640;
+  }
   h4 {
     padding: 0.5rem;
     font-size: 1.2rem;
   }
   svg, img {
     position: absolute;
-    /* border: 1px solid red; */
     right: 0;
     width: 50%;
     height: 80%;
-    top: 20%;
+    /* top: 20%; */
+    bottom: 0%;
     padding: 0.3rem;
   }
   li:nth-of-type(3) svg {
-    /* border: 1px solid red; */
-    width: 40%;
     height: 75%;
     top: 25%;
   }
   a {
     font-size: 1.5rem;
     padding: 0.8rem 0.5rem;
-    margin: 0.5rem 0;
+    margin: 2vh 0;
+    border-radius: 0.2rem;
+    color: var(--color2);
+  }
+
+  @media screen and (min-width: 600px) {
+    h4 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    h3 {
+      font-size: 2.5rem;
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height: 20vh;
+      column-gap: 1rem;
+    }
+    svg, img {
+      height: 70%;
+      width: auto;
+      position: static;
+    }
   }
 </style>
