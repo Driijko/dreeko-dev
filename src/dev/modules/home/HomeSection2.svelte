@@ -141,8 +141,8 @@
   @keyframes shuffle {
     0% {transform:translate(0%);}
     25% {transform: translate(0%);}
-    50% {transform: translate(-130%);}
-    75% {transform: translate(-130%);}
+    50% {transform: translate(-180%);}
+    75% {transform: translate(-180%);}
     100% {transform: translate(0%);}
   }
   #animation5, #animation6 {
@@ -155,14 +155,12 @@
     text-align: center;
     color: var(--color2);
     font-size: 4rem;
-    background-color: var(--color1-2);
+    background-color: var(--color1-1);
   }
   #animation5 {
-    /* background-color: var(--color1-2); */
     animation: shuffle 2.5s 0.2s ease-in-out infinite;
   }
   #animation6 {
-    /* background-color: var(--color1); */
     left: 130%;
     animation: shuffle 2.5s ease-in-out infinite;
   }
@@ -171,7 +169,7 @@
     width: 100%;
     height: 100%;
     left: 0%;
-    padding: 3% 25% 3% 0%;
+    padding: 5% 25% 5% 0%;
   }
   #speech-bubble {
     position: absolute;
@@ -198,10 +196,10 @@
     100% {opacity: 1;}
   }
   #animation7, #animation8 {
-    width: 43%;
-    height: 60%;
-    left: 16%;
-    top: 14%;
+    width: 41%;
+    height: 57%;
+    left: 17%;
+    top: 16%;
     border: none;
   }
   #animation7 {
@@ -287,8 +285,19 @@
     #animation4 svg {
       width: 40%;
     }
+    @keyframes shuffle2 {
+      0% {transform:translate(0%);}
+      25% {transform: translate(0%);}
+      50% {transform: translate(-130%);}
+      75% {transform: translate(-130%);}
+      100% {transform: translate(0%);}
+    }
+    #animation5 {
+      animation: shuffle2 2.5s 0.2s ease-in-out infinite;
+    }
     #animation6 {
       left: 100%;
+      animation: shuffle2 2.5s ease-in-out infinite;
     }
     #speech {
       font-size: 1.8vw;
