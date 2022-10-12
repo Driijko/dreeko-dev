@@ -40,7 +40,7 @@
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
   <Pamphlet {trackCurrentSnapPoint}
-    totalSnapPointsOptions={[3, 6]}
+    totalSnapPointsOptions={[4, 7]}
   >
     <SiteHeader />
     <HomeMain />

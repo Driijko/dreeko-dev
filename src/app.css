@@ -240,8 +240,12 @@ html {
   background-color: var(--color2);
 }
 
-svg path {
+svg:not(.avoid-auto-fill) path {
   fill: currentColor;
+}
+
+svg:not(.avoid-auto-fill) {
+  border: 1px solid red;
 }
 
 dialog {

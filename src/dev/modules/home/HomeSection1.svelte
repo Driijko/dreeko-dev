@@ -4,7 +4,7 @@
     <h3>Pixel-Perfect Responsive Design</h3>
     <svg id="smartphone" viewBox="0 0 384 512">
       <path d="M80 0C44.7 0 16 28.7 16 64V448c0 35.3 28.7 64 64 64H304c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H80zm80 432h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H160c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
-      <image x="15%" y="8%" width="70%" href="./home/pic1.png" />
+      <image x="15%" y="8%" width="70%" href="./home/pic1.webp" />
     </svg>
     <p>
       From the smallest smartphone...
@@ -13,7 +13,7 @@
   <div>
     <svg id="desktop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
       <path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V288H64V64H512z"/>
-      <image x="5%" y="10%" width="90%" href="./home/pic2.png" />
+      <image x="5%" y="10%" width="90%" href="./home/pic2.webp" />
     </svg>
     <p>
       ...to 4K monitors.
