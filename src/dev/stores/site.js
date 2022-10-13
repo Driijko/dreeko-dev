@@ -6,6 +6,7 @@ const pageExitDuration = 3000;
 const resizeDelay = 2000;
 const startingPageName = "home";
 const uarr1Res = [9, 16];
+const uarr2Res = [16, 9];
 
 // RESET COUNT ----------------------------------------------------
 function createResetCount() {
@@ -44,8 +45,18 @@ export function setUp() {
     viewportRes > uarr1Res[0] / uarr1Res[1] ? "auto" : "100vw"
   );
   document.documentElement.style.setProperty("--uarr1-height",
-    viewportRes > uarr1Res[0] / uarr1Res[1] ? "100vh" : "auto"
+    viewportRes > uarr1Res[0] / uarr1Res[1] ? "var(--viewport-height)" : "auto"
   );
+  document.documentElement.style.setProperty("--uarr2-aspect-ratio",
+    `${uarr2Res[0]}/${uarr2Res[1]}`
+  );
+  document.documentElement.style.setProperty("--uarr2-width", 
+    viewportRes < uarr2Res[0] / uarr2Res[1] ? "100vw" : "auto"
+  );
+  document.documentElement.style.setProperty("--uarr2-height",
+    viewportRes < uarr2Res[0] / uarr2Res[1] ? "auto" : "var(--viewport-height)"
+  );
+  
 
   // RESIZE
   let resizeReady = false;

@@ -158,6 +158,11 @@ svg {
   width: var(--uarr1-width);
   height: var(--uarr1-height);
 }
+.uarr2 {
+  aspect-ratio: var(--uarr2-aspect-ratio);
+  width: var(--uarr2-width);
+  height: var(--uarr-height);
+}
 
 /* COVERING MODAL //////////////// */
 .covering-modal {
