@@ -71,7 +71,7 @@
   // LIFECYCLE -------------------------------------------------
   onMount(()=> {
 
-    currentSnapPoint = 2;
+    currentSnapPoint = 3;
     snap(true, false);
 
     snapScrollContainer.addEventListener(
@@ -117,6 +117,6 @@
     top: 0;
     transform: translateY(0);
     height: var(--viewport-height);
-    transition: transform 0.8s ease-in-out;
+    /* transition: transform 0.8s ease-in-out; */
   }
 </style>

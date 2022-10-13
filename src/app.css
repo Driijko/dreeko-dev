@@ -152,6 +152,13 @@ svg {
   transition: opacity var(--page-exit-duration) ease-out;
 }
 
+/* UARR /////////////////////////// */
+.uarr1 {
+  aspect-ratio: var(--uarr1-aspect-ratio);
+  width: var(--uarr1-width);
+  height: var(--uarr1-height);
+}
+
 /* COVERING MODAL //////////////// */
 .covering-modal {
   position: fixed;
@@ -235,7 +242,7 @@ html {
   --color2-1: hsl(50, 100%, 90%);
   --color3: hsl(0, 100%, 50%);
   --color3-1: hsl(0, 100%, 35%);
-  --color4: hsl(0, 100%, 35%);
+  --color3-2: hsl(0, 100%, 50%, 0.5);
   color: var(--color1);
   background-color: var(--color2);
 }
@@ -275,7 +282,24 @@ dialog {
 
 }
 
+.interface-style5 {
+  background-color: var(--color1-2);
+  color: var(--color2);
+}
 
+.interface-style6 {
+  border: 0.2rem solid var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: var(--color2);
+  transition: background-color 0.5s ease-out;
+}
+
+.interface-style6:hover, .interface-style6:focus {
+  background-color: var(--color3);
+}
 
 @media (hover:hover) {
   .interface-style2:hover, .interface-style2:focus {
@@ -291,6 +315,11 @@ dialog {
   .interface-style4:hover, .interface-style4:focus {
     background-color: var(--color2);
     color: var(--color1);
+  }
+
+  .interface-style5:hover, .interface-style5:focus {
+    color: var(--color1-2);
+    background-color: var(--color1-1);
   }
 }
 

@@ -41,7 +41,7 @@
       </svg>
     </li>
   </ul>
-  <a href="" class="interface-style1">Learn More</a>
+  <a href="" class="interface-style5">Learn More</a>
 </section>
 
 <!-- STYLES ///////////////////////////////////////////////////// -->
@@ -79,6 +79,7 @@
     width: 49%;
     color: none;
     height: 28vw;
+    max-height: 20vh;
   }
   li:nth-of-type(1) {
     color: #DD4B25;
@@ -123,7 +124,7 @@
     padding: 0.8rem 0.5rem;
     margin: 2vh 0;
     border-radius: 0.2rem;
-    color: var(--color2);
+    /* color: var(--color2); */
   }
 
   @media screen and (min-width: 600px) {
@@ -149,5 +150,8 @@
       width: auto;
       position: static;
     }
+    /* a {
+      margin-bottom: 5vh;
+    } */
   }
 </style>

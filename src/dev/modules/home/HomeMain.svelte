@@ -5,6 +5,7 @@
   import HomeSection1 from "./HomeSection1.svelte";
   import HomeSection2 from "./HomeSection2.svelte";
   import HomeSection3 from "./HomeSection3.svelte";
+  import HomeSection4 from "./HomeSection4.svelte";
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////// -->
@@ -13,4 +14,5 @@
   <HomeSection1 />
   <HomeSection2 />
   <HomeSection3 />
+  <HomeSection4 />
 </main>

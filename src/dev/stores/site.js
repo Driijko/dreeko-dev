@@ -5,6 +5,7 @@ import { writable, get } from "svelte/store";
 const pageExitDuration = 3000;
 const resizeDelay = 2000;
 const startingPageName = "home";
+const uarr1Res = [9, 16];
 
 // RESET COUNT ----------------------------------------------------
 function createResetCount() {
@@ -29,30 +30,22 @@ export function pageExit(destinationPageName) {
   }, pageExitDuration);
 };
 
-// CURRENT PAGE NAME --------------------------------------------------
-// function createCurrentPageName() {
-//   const {subscribe, set} = writable(startingPageName);
-
-//   return {
-//     subscribe,
-//     setCurrentPageName: pageName => {
-//       get(currentPage).style.opacity = 0;
-//       const timerId = setTimeout(()=> {
-//         clearTimeout(timerId);
-//         set(pageName);
-//       },pageExitDuration);
-//     },
-//   }
-// }
-
-// export const currentPageName = createCurrentPageName();
-
 // SETUP ----------------------------------------------------------
 export function setUp() {
 
   // CSS Variables
   document.documentElement.style.setProperty("--page-exit-duration", `${pageExitDuration}ms`);
   document.documentElement.style.setProperty("--viewport-height", `${window.innerHeight}px`);
+  const viewportRes = window.innerWidth/window.innerHeight;
+  document.documentElement.style.setProperty("--uarr1-aspect-ratio",
+    `${uarr1Res[0]}/${uarr1Res[1]}`
+  );
+  document.documentElement.style.setProperty("--uarr1-width", 
+    viewportRes > uarr1Res[0] / uarr1Res[1] ? "auto" : "100vw"
+  );
+  document.documentElement.style.setProperty("--uarr1-height",
+    viewportRes > uarr1Res[0] / uarr1Res[1] ? "100vh" : "auto"
+  );
 
   // RESIZE
   let resizeReady = false;
