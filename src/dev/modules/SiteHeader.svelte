@@ -1,11 +1,13 @@
 <!-- SCRIPTS /////////////////////////////////////////////////////// -->
 <script>
   // IMPORT SCRIPTS -----------------------------------------------
-  import { pageExit } from "../stores/site.js";
+  import { currentPageName, pageExit } from "../stores/site.js";
   import { modals } from "../stores/page.js";
 
   // ELEMENT / COMPONENT REFERENCES -------------------------------
   let home;
+
+  console.log($currentPageName);
 
 
 </script>
@@ -26,17 +28,35 @@
 
   <nav id="site-header-area2">
     <ul>
-      <li>
-        <a on:click|preventDefault={()=> pageExit("splash")} class="interface-style2" href="" >Portfolio</a>
+      <li class:excluded={$currentPageName === "home"} >
+        <a href="" 
+          class="interface-style2"
+          on:click|preventDefault={()=> pageExit("home")}
+        >Home</a>
       </li>
-      <li>
-        <a class="interface-style2" href="" >Technology</a>
+      <li class:excluded={$currentPageName === "portfolio"}>
+        <a href="" 
+          class="interface-style2"
+          on:click|preventDefault={()=> pageExit("portfolio")}
+        >Portfolio</a>
       </li>
-      <li>
-        <a class="interface-style2" href="" >Hire</a>
+      <li class:excluded={$currentPageName === "technology"}>
+        <a href="" 
+          class="interface-style2"
+          on:click|preventDefault={()=> pageExit("technology")}
+        >Technology</a>
       </li>
-      <li>
-        <a class="interface-style2" href="" >CV</a>
+      <li class:excluded={$currentPageName === "hire"}>
+        <a href="" 
+          class="interface-style2"
+          on:click|preventDefault={()=> pageExit("hire")}
+        >Hire</a>
+      </li>
+      <li class:excluded={$currentPageName === "cv"}>
+        <a href="" 
+          class="interface-style2"
+          on:click|preventDefault={()=> pageExit("cv")}
+        >CV</a>
       </li>
     </ul>
   </nav>
@@ -149,6 +169,10 @@ header > * {
     display: flex;
     justify-content: center;
     height: 100%;
+  }
+
+  .excluded {
+    display: none !important;
   }
 
   #site-header-area2 a {
