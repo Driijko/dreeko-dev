@@ -10,6 +10,7 @@
   import Pamphlet from "../layers/Pamphlet.svelte";
   import SiteHeader from "../modules/SiteHeader.svelte";
   import HomeMain from "../modules/home/HomeMain.svelte";
+  import SiteFooter from "../modules/SiteFooter.svelte";
   import SiteMenuModal from "../layers/SiteMenuModal.svelte";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
@@ -40,10 +41,11 @@
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
   <Pamphlet {trackCurrentSnapPoint}
-    totalSnapPointsOptions={[5, 8]}
+    totalSnapPointsOptions={[6, 9]}
   >
     <SiteHeader />
     <HomeMain />
+    <SiteFooter />
   </Pamphlet>
 
   <p aria-hidden="true" class:overlay-visible={overlayVisible === 1}>
