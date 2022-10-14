@@ -74,7 +74,7 @@
     background-color: var(--color1);
   }
   #background2 {
-    background-image: url("./assets/images/site-footer.webp");
+    background-image: url("./images/site-footer.webp");
     background-size: 200%;
     animation: background-shift 20s linear infinite;
   }
