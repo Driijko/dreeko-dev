@@ -1,3 +1,8 @@
+<!-- SCRIPTS ////////////////////////////////////////////////////// -->
+<script>
+  import {pageExit} from "../../stores/site.js";
+</script>
+
 <!-- MARKUP ////////////////////////////////////////////////// -->
 <section>
   <h3>Front-End Technologies</h3>
@@ -41,7 +46,10 @@
       </svg>
     </li>
   </ul>
-  <a href={null} class="interface-style5">Learn More</a>
+  <a href={null} 
+    class="interface-style5"
+    on:click|preventDefault={()=> pageExit("technology")}
+  >Learn More</a>
 </section>
 
 <!-- STYLES ///////////////////////////////////////////////////// -->

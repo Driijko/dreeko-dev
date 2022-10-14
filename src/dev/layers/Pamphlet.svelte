@@ -5,7 +5,7 @@
 
   // PROPS ----------------------------------------------------
   export let totalSnapPointsOptions;
-  export let trackCurrentSnapPoint;
+  export let trackCurrentSnapPoint = null;
 
   // ELEMENT / COMPONENT REFERENCES -------------------------------
   let snapScrollContainer;
@@ -33,7 +33,9 @@
       currentSnapPoint -= 1;
       snapScrollContainer.style.transform = `translateY(-${window.innerHeight * currentSnapPoint}px)`;
     }
-    trackCurrentSnapPoint(currentSnapPoint);
+    if (trackCurrentSnapPoint) {
+      trackCurrentSnapPoint(currentSnapPoint);
+    }
   }
 
   // EVENT HANDLERS -------------------------------------------

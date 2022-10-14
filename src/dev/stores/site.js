@@ -4,7 +4,7 @@ import { writable, get } from "svelte/store";
 // SETTINGS --------------------------------------------------------
 const pageExitDuration = 3000;
 const resizeDelay = 2000;
-const startingPageName = "home";
+const startingPageName = "portfolio";
 const uarr1Res = [9, 16];
 const uarr2Res = [16, 9];
 
@@ -72,6 +72,3 @@ export function setUp() {
     };
   });
 }
-
-// CURRENT PAGE -----------------------------------------------------
-// with page exit design included

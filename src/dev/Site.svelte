@@ -7,6 +7,7 @@
   import LoadingScreen from "./pages/LoadingScreen.svelte";
   import Splash from "./pages/Splash.svelte";
   import Home from "./pages/Home.svelte";
+  import Portfolio from "./pages/Portfolio.svelte";
 
   // RUN SCRIPTS ----------------------------------------------------
   setUp();
@@ -25,5 +26,7 @@
     {#key $resetCount}
       <Home />
     {/key}
+  {:else if $currentPageName === "portfolio" }
+    <Portfolio />
   {/if}
 </div>
