@@ -1,3 +1,8 @@
+<!-- SCRIPTS ///////////////////////////////////////////////////// -->
+<script>
+  import {currentPageName, pageExit } from "../stores/site.js";
+</script>
+
 <!-- MARKUP ////////////////////////////////////////////////////////// -->
 <footer>
   <div id="background1" class="background"></div>
@@ -5,17 +10,30 @@
     <h3>Explore</h3>
     <ul>
       <div id="background2" class="background"></div>
-      <li>
-        <a href="">Portfolio</a>
+      <li class:excluded={$currentPageName === "home"} >
+        <a href="" 
+          on:click|preventDefault={()=> pageExit("home")}
+        >Home</a>
       </li>
-      <li>
-        <a href="">Technology</a>
+      <li class:excluded={$currentPageName === "portfolio"}>
+        <a href="" 
+          on:click|preventDefault={()=> pageExit("portfolio")}
+        >Portfolio</a>
       </li>
-      <li>
-        <a href="">Hire</a>
+      <li class:excluded={$currentPageName === "technology"}>
+        <a href="" 
+          on:click|preventDefault={()=> pageExit("technology")}
+        >Technology</a>
       </li>
-      <li>
-        <a href="">CV</a>
+      <li class:excluded={$currentPageName === "hire"}>
+        <a href="" 
+          on:click|preventDefault={()=> pageExit("hire")}
+        >Hire</a>
+      </li>
+      <li class:excluded={$currentPageName === "cv"}>
+        <a href="" 
+          on:click|preventDefault={()=> pageExit("cv")}
+        >CV</a>
       </li>
     </ul>
   </div>
@@ -54,6 +72,9 @@
     align-items: center;
     row-gap: 10vh;
     position: relative;
+  }
+  .excluded {
+    display: none !important;
   }
   a {
     font-size: 2.2rem;

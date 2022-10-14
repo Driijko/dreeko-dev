@@ -71,8 +71,8 @@
   // LIFECYCLE -------------------------------------------------
   onMount(()=> {
 
-    // currentSnapPoint = 4;
-    // snap(true, false);
+    currentSnapPoint = 7;
+    snap(true, false);
 
     snapScrollContainer.addEventListener(
       "wheel", handleWheel, {passive: false}
