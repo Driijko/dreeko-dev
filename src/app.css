@@ -100,7 +100,7 @@ p a {
   padding: 0 0.3rem;
 }
 
-button, label, input {
+a, button, label, input {
   cursor: pointer;
 }
 

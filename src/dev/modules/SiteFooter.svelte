@@ -11,27 +11,27 @@
     <ul>
       <div id="background2" class="background"></div>
       <li class:excluded={$currentPageName === "home"} >
-        <a href="" 
+        <a href={null} 
           on:click|preventDefault={()=> pageExit("home")}
         >Home</a>
       </li>
       <li class:excluded={$currentPageName === "portfolio"}>
-        <a href="" 
+        <a href={null} 
           on:click|preventDefault={()=> pageExit("portfolio")}
         >Portfolio</a>
       </li>
       <li class:excluded={$currentPageName === "technology"}>
-        <a href="" 
+        <a href={null}  
           on:click|preventDefault={()=> pageExit("technology")}
         >Technology</a>
       </li>
       <li class:excluded={$currentPageName === "hire"}>
-        <a href="" 
+        <a href={null}  
           on:click|preventDefault={()=> pageExit("hire")}
         >Hire</a>
       </li>
       <li class:excluded={$currentPageName === "cv"}>
-        <a href="" 
+        <a href={null}  
           on:click|preventDefault={()=> pageExit("cv")}
         >CV</a>
       </li>

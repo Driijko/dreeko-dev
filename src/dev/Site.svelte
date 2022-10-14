@@ -22,6 +22,8 @@
       <Splash />
     {/key}
   {:else if $currentPageName === "home"}
-    <Home />
+    {#key $resetCount}
+      <Home />
+    {/key}
   {/if}
 </div>

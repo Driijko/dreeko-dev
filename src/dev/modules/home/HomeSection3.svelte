@@ -20,7 +20,7 @@
     </li>
     <li>
       <h4>SVG</h4>
-      <img src="./home/pic3.png" />
+      <img src="./home/pic3.png" alt="SVG logo" />
     </li>
     <li>
       <h4>React</h4>
@@ -41,7 +41,7 @@
       </svg>
     </li>
   </ul>
-  <a href="" class="interface-style5">Learn More</a>
+  <a href={null} class="interface-style5">Learn More</a>
 </section>
 
 <!-- STYLES ///////////////////////////////////////////////////// -->
@@ -111,7 +111,6 @@
     right: 0;
     width: 50%;
     height: 80%;
-    /* top: 20%; */
     bottom: 0%;
     padding: 0.3rem;
   }
@@ -124,7 +123,6 @@
     padding: 0.8rem 0.5rem;
     margin: 2vh 0;
     border-radius: 0.2rem;
-    /* color: var(--color2); */
   }
 
   @media screen and (min-width: 600px) {
@@ -150,8 +148,5 @@
       width: auto;
       position: static;
     }
-    /* a {
-      margin-bottom: 5vh;
-    } */
   }
 </style>
