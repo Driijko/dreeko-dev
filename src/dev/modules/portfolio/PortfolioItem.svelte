@@ -7,13 +7,13 @@
   export let siteAddress;
   export let pictureData;
   export let description;
+  export let order = "switch";
 
   // DEVICE STATE -------------------------------------------------------
   let viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
   // LOCAL STATE -----------------------------------------------------
   let area2Hidden = viewportOrientation === "landscape" ? false : true;
   let hiddenSubArea = 2;
-  // let area2Hidden = false;
 
   // EVENT HANDLERS --------------------------------------------------
   function revealArea2() {
@@ -27,10 +27,13 @@
 <!-- MARKUP /////////////////////////////////////////////////// -->
 <section id="portfolio-item">
 
-  <div id="area1">
+  <div id="area1" class:switch={order === "switch" && viewportOrientation === "landscape"}>
     <div>
-      <h3 aria-label={logoData[1]}>
-        <img id="logo" src={logoData[0]} alt={logoData[1]} />
+      <h3 aria-label={logoData[2]}>
+        <img id="logo" 
+          src={viewportOrientation === "portrait" && window.innerWidth < 600 || viewportOrientation === "landscape" && window.innerWidth < 1800 ? logoData[0] : logoData[1]} 
+          alt={logoData[2]} 
+        />
       </h3>
       <p id="descriptor-and-date">
         <span id="generic-descriptor">{genericDescriptor}</span><br/>
@@ -49,7 +52,7 @@
     >Visit Site</a>
   </div>
 
-  <div id="area2" class:hidden={area2Hidden} >
+  <div id="area2" class:hidden={area2Hidden} class:switch={order === "switch" && viewportOrientation === "landscape"}>
 
     <div id="sub-area1"
       class:hidden={viewportOrientation === "portrait" && hiddenSubArea === 1}
@@ -96,7 +99,7 @@
     height: var(--viewport-height);
     position: relative;
   }
-  a {
+  button, a {
     display: block;
   }
   .hidden {
@@ -113,6 +116,9 @@
     text-align: center;
     background-color: var(--color1);
     color: var(--color1-2);
+  }
+  #logo {
+    width: 100%;
   }
   #descriptor-and-date {
     font-family: "Montserrat", sans-serif;
@@ -137,6 +143,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 2.7rem;
   }
   #area2 button {
     font-weight: bold;
@@ -176,9 +183,9 @@
     right: 0;
     font-size: 1.5rem;
     font-weight: bold;
+    width: 2.5rem;
+    height: 2.5rem;
   }
-
-
   @media screen and (orientation: portrait) {
     div {
       width: 100%;
@@ -229,6 +236,12 @@
     #area1, #area2 {
       border-radius: 0.3rem;
     }
+    #area1.switch {
+      order: 2;
+    }
+    #area2.switch {
+      order: 1;
+    }
     #area1 {
       width: 30%;
       height: 100%;
@@ -238,6 +251,9 @@
     #area1 a {
       color: var(--color1);
       transition: color 0.5s ease-out;
+      font-size: 1.2rem;
+      width: 6rem;
+      height: 2.5rem;
     }
     #area1 a:hover, #area1 a:focus {
       color: var(--color2);
