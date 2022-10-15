@@ -58,7 +58,7 @@
         src={viewportOrientation === "portrait" ? pictureData[0] : pictureData[1]} 
         alt={pictureData[2]} 
       />
-      <button type="button"
+      <button class="portrait-nav-button" type="button"
         on:click={()=> hiddenSubArea = 1}
         class:hidden={viewportOrientation === "landscape"}
       >Next &gt; </button>
@@ -111,6 +111,8 @@
   #area1 {
     row-gap: 2rem;
     text-align: center;
+    background-color: var(--color1);
+    color: var(--color1-2);
   }
   #descriptor-and-date {
     font-family: "Montserrat", sans-serif;
@@ -125,8 +127,17 @@
   }
   #area1 button, #area1 a {
     font-size: 1.3rem;
+    background-color: var(--color1-2);
+    color: var(--color2);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    width: 8rem;
   }
-
+  #area1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   #area2 button {
     font-weight: bold;
     font-size: 1.3rem;
@@ -179,18 +190,32 @@
       position: absolute;
       left: 0;
       top: 0;
-      background-color: var(--color2);
     }
     #area2 div {
       padding-top: 3rem;
-      background-color: var(--color2);
       position: absolute;
       height: var(--viewport-height);
       top: 0;
       left: 0;
+      background-color: var(--color2);
+    }
+    #exit-button {
+      color: var(--color2);
+      background-color: var(--color1);
+      border-radius: 0 0 0 0.3rem;
     }
     #site-pic {
+      width: 100%;
       height: 85%;
+      background-color: var(--color2-2);
+      border-top: 0.5rem solid var(--color1);
+      border-bottom: 0.5rem solid var(--color1);
+    }
+    #sub-area2 {
+      background-color: var(--color2);
+    }
+    #description {
+      font-size: 1rem;
     }
   }
   @media screen and (orientation: landscape) {
@@ -202,8 +227,6 @@
       background-color: var(--color1);
     }
     #area1, #area2 {
-      /* border-left: 0.1rem solid var(--color1); */
-      /* border-right: 0.1rem solid var(--color1); */
       border-radius: 0.3rem;
     }
     #area1 {
@@ -211,22 +234,43 @@
       height: 100%;
       background-color: var(--color1-1);
       color: var(--color1-2);
-
+    }
+    #area1 a {
+      color: var(--color1);
+      transition: color 0.5s ease-out;
+    }
+    #area1 a:hover, #area1 a:focus {
+      color: var(--color2);
+    }
+    #generic-descriptor {
+      font-size: 1.3rem;
+    }
+    #date {
+      font-size: 1rem;
     }
     #area2 {
       width: 60%;
       height: 100%;
       border: 0.1rem solid var(--color2);
     }
-    #area2 div {
-      height: 50%;
+    #sub-area1 {
+      height: 60%;
+    }
+    #sub-area2 {
+      height: 40%;
+      row-gap: 1rem;
     }
     #sub-area2 {
       background-color: var(--color2);
     }
     #site-pic {
       height: 100%;
-      max-height: 50vh;
+      /* max-height: 50vh; */
+    }
+  }
+  @media screen and (orientation: landscape) and (min-height: 1000px) {
+    #sub-area2 {
+      row-gap: 3rem;
     }
   }
 </style>
