@@ -113,6 +113,14 @@ a, button, input {
   min-height: 40px;
 }
 
+i {
+  font-style: italic;
+}
+
+em {
+  font-weight: bold;
+}
+
 /* PREVENT OVERSIZED IMAGES */
 img {
   max-width: 100%;
@@ -331,3 +339,4 @@ dialog {
 
 /* ANIMATIONS /////////////////////////////////////////////////// */
 @keyframes fade-in {from {opacity: 0;} to {opacity:1;}}
+@keyframes rotate {from {transform: rotate(0);} to{transform: rotate(360deg)}}

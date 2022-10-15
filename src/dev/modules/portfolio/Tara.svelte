@@ -6,8 +6,7 @@
 <!-- MARKUP ------------------------------------------------------ -->
 <PortfolioItem 
   logoData={[
-    "./portfolio/tara-logo-small.webp", 
-    "./portfolio/tara-logo-medium.webp",
+    "./portfolio/tara-logo.webp",
     "Tara McMahon, therapist and social worker."
   ]}
   genericDescriptor={"Professional Profile"}
@@ -16,9 +15,7 @@
   pictureData={[
     "./portfolio/tara-site-pic-portrait.webp",
     "./portfolio/tara-site-pic-landscape.webp",
-    "Home page of professional profile website of Tara McMahon."
+    "Home page website of therapist and social worker Tara McMahon."
   ]}
   description={"Professional profile website for therapist and social worker Tara McMahon. A highlight of this site's design is a use of textures, gradients, and fading transitions to create a warm, friendly and relaxing experience for potential clients."}
->
-
-</PortfolioItem>
+/>

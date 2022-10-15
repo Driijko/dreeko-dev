@@ -7,7 +7,8 @@
   export let siteAddress;
   export let pictureData;
   export let description;
-  export let order = "switch";
+  export let technologies = ["HTML", "CSS", "JavaScript"];
+  export let order = "normal";
 
   // DEVICE STATE -------------------------------------------------------
   let viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
@@ -15,13 +16,6 @@
   let area2Hidden = viewportOrientation === "landscape" ? false : true;
   let hiddenSubArea = 2;
 
-  // EVENT HANDLERS --------------------------------------------------
-  function revealArea2() {
-    area2Hidden = false;
-  };
-  function hideArea2() {
-    area2Hidden = true;
-  };
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////// -->
@@ -29,20 +23,20 @@
 
   <div id="area1" class:switch={order === "switch" && viewportOrientation === "landscape"}>
     <div>
-      <h3 aria-label={logoData[2]}>
+      <h3 aria-label={logoData[1]}>
         <img id="logo" 
-          src={viewportOrientation === "portrait" && window.innerWidth < 600 || viewportOrientation === "landscape" && window.innerWidth < 1800 ? logoData[0] : logoData[1]} 
-          alt={logoData[2]} 
+          src={logoData[0]} 
+          alt={logoData[1]}
         />
       </h3>
       <p id="descriptor-and-date">
-        <span id="generic-descriptor">{genericDescriptor}</span><br/>
+        <span id="generic-descriptor">{@html genericDescriptor}</span><br/>
         <span id="date">{date}</span>
       </p>
     </div>
     {#if viewportOrientation === "portrait"}
       <button type="button" 
-        on:click={revealArea2}
+        on:click={()=> area2Hidden = false}
         class="interface-style6"
       >Learn More</button>
     {/if}
@@ -70,19 +64,21 @@
     <div id="sub-area2"
       class:hidden={viewportOrientation === "portrait" && hiddenSubArea === 2}
     >
+      <svg id="decor1" class="decors" viewBox="0 0 512 512" class:hidden={viewportOrientation === "landscape" || window.innerHeight < 700}><path d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5h88c8.8 0 16 7.2 16 16s-7.2 16-16 16H288 216s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440v16c0 13.3 10.7 24 24 24s24-10.7 24-24V440c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z"/></svg>
       <p id="description">{@html description}</p>
       <section id="technology-section">
         <h4>Technologies</h4>
         <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
+          {#each technologies as technology}
+            <li>{technology}</li>
+          {/each}
         </ul>
       </section>
       <button type="button"
         on:click={()=> hiddenSubArea = 2}
         class:hidden={viewportOrientation === "landscape"}
       > &lt; Back </button>
+      <svg id="decor2" class="decors" viewBox="0 0 512 512" class:hidden={viewportOrientation === "landscape" || window.innerHeight < 700}><path d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5h88c8.8 0 16 7.2 16 16s-7.2 16-16 16H288 216s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440v16c0 13.3 10.7 24 24 24s24-10.7 24-24V440c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z"/></svg>
     </div>
 
     <button id="exit-button" type="button" 
@@ -112,13 +108,17 @@
     align-items: center;
   }
   #area1 {
-    row-gap: 2rem;
+    row-gap: 1.5rem;
     text-align: center;
     background-color: var(--color1);
     color: var(--color1-2);
   }
+  h3 {
+    margin-bottom: 2rem;
+  }
   #logo {
-    width: 100%;
+    width: 90%;
+    max-height: 35vh;
   }
   #descriptor-and-date {
     font-family: "Montserrat", sans-serif;
@@ -127,6 +127,7 @@
   }
   #generic-descriptor {
     font-size: 1.5rem;
+    line-height: 1.3
   }
   #date {
     font-size: 1.2rem;
@@ -153,12 +154,13 @@
     row-gap: 1rem;
   }
   #sub-area2 {
-    row-gap: 3rem;
+    row-gap: 5vh;
   }
   #description {
     padding: 0 5vw;
     max-width: 70ch;
     line-height: 1.5;
+    word-spacing: 0.1rem;
   }
   #technology-section {
     display: flex;
@@ -176,6 +178,8 @@
     justify-content: center;
     flex-wrap: wrap;
     column-gap: 3rem;
+    row-gap: 1rem;
+    padding: 0 1rem;
   }
   #exit-button {
     position: absolute;
@@ -223,6 +227,32 @@
     }
     #description {
       font-size: 1rem;
+    }
+    .decors {
+      position: absolute;
+      height: 8vh;
+      width: 100%;
+      color: var(--color2-2);
+    }
+    #decor1 {
+      top: 8%;
+    }
+    #decor2 {
+      bottom: 5%;
+      transform: rotate(180deg);
+    }
+  }
+  @media screen and (orientation: portrait) and (min-width: 600px) {
+    h4 {
+      font-size: 2rem;
+    }
+    #description, ul, #area2 button {
+      font-size: 1.4rem;
+    }
+  }
+  @media screen and (orientation: portrait) and (min-width: 768px) {
+    #description {
+      width: 85%;
     }
   }
   @media screen and (orientation: landscape) {
@@ -272,21 +302,24 @@
     #sub-area1 {
       height: 60%;
     }
+    #site-pic {
+      height: 100%;
+    }
     #sub-area2 {
       height: 40%;
       row-gap: 1rem;
-    }
-    #sub-area2 {
       background-color: var(--color2);
     }
-    #site-pic {
-      height: 100%;
-      /* max-height: 50vh; */
+    #description {
+      font-size: 0.8rem;
     }
   }
   @media screen and (orientation: landscape) and (min-height: 1000px) {
+    #description {
+      font-size: 1rem;
+    }
     #sub-area2 {
-      row-gap: 3rem;
+      row-gap: 2rem;
     }
   }
 </style>
