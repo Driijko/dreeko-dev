@@ -36,7 +36,7 @@
     <path class="paths1" d="M 50 -10 Q 75 50 50 110"/>
     <path class="paths1" d="M 50 -10 Q 60 50 50 110"/>
   </svg>
-  <h2>Portfolio</h2>
+  <h2>Website<br/>Portfolio</h2>
   <svg id="scroll-indicator" viewBox="0 0 448 512">
     <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
   </svg>
@@ -64,6 +64,8 @@
     color: var(--color2);
     opacity: 0;
     animation: fade-in 10s 2s ease-out forwards;
+    text-align: center;
+    line-height: 1.2;
   }
   #scroll-indicator {
     padding: 0.7rem;
@@ -79,7 +81,7 @@
   }
   .paths1 {
     stroke-width: 70;
-    stroke: hsla(0, 100%, 50%, 0.1);
+    stroke: hsla(0, 100%, 50%, 0.13);
     fill: transparent;
   }
 </style>

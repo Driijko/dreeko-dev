@@ -7,9 +7,6 @@
   // ELEMENT / COMPONENT REFERENCES -------------------------------
   let home;
 
-  console.log($currentPageName);
-
-
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////////////// -->

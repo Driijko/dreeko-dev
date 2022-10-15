@@ -27,6 +27,8 @@
       <Home />
     {/key}
   {:else if $currentPageName === "portfolio" }
-    <Portfolio />
+    {#key $resetCount}
+      <Portfolio />
+    {/key}
   {/if}
 </div>
