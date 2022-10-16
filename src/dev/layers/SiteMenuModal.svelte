@@ -2,6 +2,7 @@
 <script>
   // IMPORT STORES ------------------------------------------------
   import {modals} from "../stores/page.js";
+  import { currentPageName, pageExit } from "../stores/site.js";
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////////// -->
@@ -15,7 +16,7 @@
       <h3 id="site-menu-area1">Menu</h3>
 
       <nav id="site-menu-area4">
-        <ul>
+        <!-- <ul>
           <li>
             <a class="center interface-style3" href="" >Home</a>
           </li>
@@ -30,6 +31,38 @@
           </li>
           <li>
             <a class="center interface-style3" href="" >CV</a>
+          </li>
+        </ul> -->
+        <ul>
+          <li class:excluded={$currentPageName === "home"} >
+            <a href={null} 
+              class="interface-style3 center"
+              on:click|preventDefault={()=> pageExit("home")}
+            >Home</a>
+          </li>
+          <li class:excluded={$currentPageName === "portfolio"}>
+            <a href={null} 
+              class="interface-style3 center"
+              on:click|preventDefault={()=> pageExit("portfolio")}
+            >Portfolio</a>
+          </li>
+          <li class:excluded={$currentPageName === "technology"}>
+            <a href={null} 
+              class="interface-style3 center"
+              on:click|preventDefault={()=> pageExit("technology")}
+            >Technology</a>
+          </li>
+          <li class:excluded={$currentPageName === "hire"}>
+            <a href={null} 
+              class="interface-style3 center"
+              on:click|preventDefault={()=> pageExit("hire")}
+            >Hire</a>
+          </li>
+          <li class:excluded={$currentPageName === "cv"}>
+            <a href={null} 
+              class="interface-style3 center"
+              on:click|preventDefault={()=> pageExit("cv")}
+            >CV</a>
           </li>
         </ul>
       </nav>

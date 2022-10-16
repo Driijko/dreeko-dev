@@ -8,6 +8,7 @@
   import Splash from "./pages/Splash.svelte";
   import Home from "./pages/Home.svelte";
   import Portfolio from "./pages/Portfolio.svelte";
+  import Technology from "./pages/Technology.svelte";
 
   // RUN SCRIPTS ----------------------------------------------------
   setUp();
@@ -30,5 +31,7 @@
     {#key $resetCount}
       <Portfolio />
     {/key}
+  {:else if $currentPageName === "technology"}
+    <Technology />
   {/if}
 </div>

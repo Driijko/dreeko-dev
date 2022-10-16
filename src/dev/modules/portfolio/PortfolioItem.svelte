@@ -51,6 +51,9 @@
     <div id="sub-area1"
       class:hidden={viewportOrientation === "portrait" && hiddenSubArea === 1}
     >
+      <p id="preview" class:hidden={viewportOrientation === "landscape"}>
+        Preview
+      </p>
       <img id="site-pic" 
         src={viewportOrientation === "portrait" ? pictureData[0] : pictureData[1]} 
         alt={pictureData[2]} 
@@ -74,7 +77,7 @@
           {/each}
         </ul>
       </section>
-      <button type="button"
+      <button type="button" class="portrait-nav-button"
         on:click={()=> hiddenSubArea = 2}
         class:hidden={viewportOrientation === "landscape"}
       > &lt; Back </button>
@@ -214,6 +217,21 @@
       color: var(--color2);
       background-color: var(--color1);
       border-radius: 0 0 0 0.3rem;
+    }
+    .portrait-nav-button {
+      background-color: var(--color1);
+      border-radius: 0.3rem;
+      color: var(--color2);
+      padding: 0.2rem 0.5rem;
+    }
+    #preview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: "Montserrat", sans-serif;
+      padding: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
     }
     #site-pic {
       width: 100%;

@@ -3,6 +3,10 @@
   // IMPORT SCRIPTS ----------------------------------------------
   import { onMount, onDestroy } from "svelte";
 
+  // SITE SETTINGS ---------------------------------------
+  document.body.classList.add("pamphlet");
+  document.documentElement.classList.add("pamphlet");
+
   // PROPS ----------------------------------------------------
   export let totalSnapPointsOptions;
   export let trackCurrentSnapPoint = null;
@@ -73,9 +77,7 @@
   // LIFECYCLE -------------------------------------------------
   onMount(()=> {
 
-    currentSnapPoint = 4;
-    snap(true, false);
-
+    // EVENTS LISTENERS --------------------
     snapScrollContainer.addEventListener(
       "wheel", handleWheel, {passive: false}
     );
@@ -95,7 +97,12 @@
   });
 
   onDestroy(()=> {
+    // EVENT LISTENERS ----------------------------
     document.removeEventListener("keydown", handleKeyDown);
+
+    // SITE SETTINGS ------------------------------
+    document.body.classList.remove("pamphlet");
+    document.documentElement.classList.remove("pamphlet");
   });
 
 </script>
@@ -107,18 +114,12 @@
 
 <!-- STYLES //////////////////////////////////////////////////////// -->
 <style>
-  :root, :global(body) {
-    height: var(--viewport-height);
-    width: 100%;
-    overflow: hidden;
-  }
-
   div {
     width: 100%;
     position: fixed;
     top: 0;
     transform: translateY(0);
     height: var(--viewport-height);
-    /* transition: transform 0.8s ease-in-out; */
+    transition: transform 0.8s ease-in-out;
   }
 </style>
