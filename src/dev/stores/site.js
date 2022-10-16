@@ -4,7 +4,7 @@ import { writable, get } from "svelte/store";
 // SETTINGS --------------------------------------------------------
 const pageExitDuration = 3000;
 const resizeDelay = 2000;
-const startingPageName = "portfolio";
+const startingPageName = "technology";
 const uarr1Res = [9, 16];
 const uarr2Res = [16, 9];
 
