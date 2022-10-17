@@ -1,9 +1,37 @@
 <!-- SCRIPTS /////////////////////////////////////////////////////// -->
 <script>
+  // IMPORT SCRIPTS ---------------------------------------
+  import { onMount } from "svelte";
+  import { currentPage } from "../stores/site.js";
+
+  // IMPORT COMPONENTS ---------------------------------------
   import TechnologyMain from "../layers/TechnologyMain.svelte";
   import SiteMenuModal from "../layers/SiteMenuModal.svelte";
+
+  // ELEMENT / COMPONENT REFERENCES ----------------------------
+  let page;
+
+  // LIFECYCLE -----------------------------------------------
+  onMount(()=> {
+    currentPage.set(page);
+  })
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
-<TechnologyMain />
-<SiteMenuModal />
+<div bind:this={page} class="page">
+  <TechnologyMain />
+  <SiteMenuModal />
+</div>
+
+<!-- STYLE ////////////////////////////////////////////////////// -->
+<style>
+  div {
+    height: var(--viewport-height);
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+  div::-webkit-scrollbar {
+    display: none;
+  }
+</style>
