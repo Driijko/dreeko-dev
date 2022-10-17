@@ -1,7 +1,7 @@
 // IMPORT SCRIPTS --------------------------------------------------
 import { writable, get } from "svelte/store";
 
-// SETTINGS --------------------------------------------------------
+// SITE SETTINGS --------------------------------------------------------
 const pageExitDuration = 3000;
 const resizeDelay = 2000;
 const startingPageName = "technology";
@@ -23,11 +23,12 @@ export const resetCount = createResetCount();
 // CURRENT PAGE --------------------------------------------------------
 export const currentPage = writable(null);
 export const currentPageName = writable(startingPageName);
-export function pageExit(destinationPageName) {
+export function pageExit(destinationPageName, onNewPage) {
   get(currentPage).style.opacity = 0;
   const timerId = setTimeout(()=> {
     clearTimeout(timerId);
     currentPageName.set(destinationPageName);
+    if(onNewPage) onNewPage();
   }, pageExitDuration);
 };
 

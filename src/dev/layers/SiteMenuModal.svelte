@@ -16,52 +16,35 @@
       <h3 id="site-menu-area1">Menu</h3>
 
       <nav id="site-menu-area4">
-        <!-- <ul>
-          <li>
-            <a class="center interface-style3" href="" >Home</a>
-          </li>
-          <li>
-            <a class="center interface-style3" href="" >Portfolio</a>
-          </li>
-          <li>
-            <a class="center interface-style3" href="" >Technology</a>
-          </li>
-          <li>
-            <a class="center interface-style3" href="" >Hire</a>
-          </li>
-          <li>
-            <a class="center interface-style3" href="" >CV</a>
-          </li>
-        </ul> -->
         <ul>
           <li class:excluded={$currentPageName === "home"} >
             <a href={null} 
               class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("home")}
+              on:click|preventDefault={()=> pageExit("home", ()=> modals.close("siteMenu"))}
             >Home</a>
           </li>
           <li class:excluded={$currentPageName === "portfolio"}>
             <a href={null} 
               class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("portfolio")}
+              on:click|preventDefault={()=> pageExit("portfolio", ()=> modals.close("siteMenu"))}
             >Portfolio</a>
           </li>
           <li class:excluded={$currentPageName === "technology"}>
             <a href={null} 
               class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("technology")}
+              on:click|preventDefault={()=> pageExit("technology", ()=> modals.close("siteMenu"))}
             >Technology</a>
           </li>
           <li class:excluded={$currentPageName === "hire"}>
             <a href={null} 
               class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("hire")}
+              on:click|preventDefault={()=> pageExit("hire", ()=> modals.close("siteMenu"))}
             >Hire</a>
           </li>
           <li class:excluded={$currentPageName === "cv"}>
             <a href={null} 
               class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("cv")}
+              on:click|preventDefault={()=> pageExit("cv", ()=> modals.close("siteMenu"))}
             >CV</a>
           </li>
         </ul>
