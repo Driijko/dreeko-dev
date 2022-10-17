@@ -18,7 +18,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
-<div bind:this={page} class="page regular-scroll">
+<div bind:this={page} class="page">
   <TechnologyMain />
   <SiteMenuModal />
 </div>

@@ -6,6 +6,9 @@
   // IMPORT COMPONENTS ---------------------------------------
   import ExpandableList from "../ExpandableList.svelte";
 
+  // PROPS ---------------------------------------------------
+  export let main;
+
   // LOCAL SETTINGS ----------------------------------------------
   let technologies = [
     "HTML",
@@ -41,7 +44,7 @@
     {#if currentSelected === 0}
       <section in:fly="{{delay: transitionDuration, duration: transitionDuration, x: window.innerWidth * 0.7}}" out:fly="{{duration:transitionDuration, x: window.innerWidth * 0.7}}">
         <h3>HTML</h3>
-        <div class="description-body" on:scroll={()=> console.log("scrolling!")}>
+        <div class="description-body" on:scroll|once={()=> main.scroll({top: window.innerHeight, behavior: "smooth"})}>
           <p class="sub-header">
             HyperText Markup Language
           </p>
