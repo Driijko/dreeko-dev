@@ -5,7 +5,9 @@
   
   // LOCAL STATE -----------------------------------------------------
   let currentSelected = viewportOrientation === "landscape" ? 0 : null;
+  // let currentSelected = 0;
   let area2Open = viewportOrientation === "landscape" ? true : false;
+  // let area2Open = true;
 
   // EVENT HANDLERS ----------------------------------------------------
   function updateCurrentSelected(num) {
@@ -23,41 +25,57 @@
 <!-- MARKUP ////////////////////////////////////////////////////////// -->
 <section>
   <div id="area1">
-    <slot name="main-list" />
+    <slot name="main-list"
+      selectItem={
+        viewportOrientation === "landscape" ? updateCurrentSelected 
+        : (num) => {
+          updateCurrentSelected(num);
+          openArea2();
+        }
+      } 
+    />
   </div>
   <div id="area2"
     class:open={area2Open} class:closed={!area2Open}
   >
-    <slot name="selected-list-item" />
+    <slot name="selected-list-item" {closeArea2} {currentSelected} />
   </div>
 </section>
 
 <!-- STYLE ////////////////////////////////////////////////////// -->
 <style>
   section {
-    /* border: 4px solid green; */
     height: var(--viewport-height);
     position: relative;
   }
   #area1, #area2 {
     height: 100%;
-    /* border: 4px solid red; */
   }
   @media screen and (orientation: portrait) {
     #area2 {
-      background-color: blue;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       transform-origin: 100% 0%;
-      transition: transform 2s ease-out;
+      transition: transform 1s ease-out;
     }
     #area2.open {
       transform: scale(1);
     }
     #area2.closed {
       transform: scale(0);
+    }
+  }
+  @media screen and (orientation: landscape) {
+    section {
+      display: flex;
+    }
+    #area1 {
+      width: 30%;
+    }
+    #area2 {
+      width: 70%;
     }
   }
 </style>
