@@ -77,6 +77,9 @@ input {
 
 html {
   scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -88,17 +91,12 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
-
-:root.pamphlet, body.pamphlet {
-  height: var(--viewport-height);
-  width: 100%;
-  overflow: hidden;
-} 
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -141,6 +139,15 @@ svg {
 }
 
 /* CSS TOOLS ///////////////////////////////////////////////////////////////// */
+.regular-scroll {
+  height: var(--viewport-height);
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+.regular-scroll::-webkit-scrollbar {
+  display: none;
+}
 .hidden-submit {
   visibility: hidden;
   position: absolute;

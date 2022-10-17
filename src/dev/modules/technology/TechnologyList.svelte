@@ -41,7 +41,7 @@
     {#if currentSelected === 0}
       <section in:fly="{{delay: transitionDuration, duration: transitionDuration, x: window.innerWidth * 0.7}}" out:fly="{{duration:transitionDuration, x: window.innerWidth * 0.7}}">
         <h3>HTML</h3>
-        <div class="description-body">
+        <div class="description-body" on:scroll={()=> console.log("scrolling!")}>
           <p class="sub-header">
             HyperText Markup Language
           </p>
@@ -212,6 +212,7 @@
   @media screen and (orientation: portrait) {
     #area2 {
       position: relative;
+      border-top: 0.3rem solid var(--color2);
     }
     #close-area2 {
       display: flex;

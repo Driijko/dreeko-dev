@@ -18,20 +18,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
-<div bind:this={page} class="page">
+<div bind:this={page} class="page regular-scroll">
   <TechnologyMain />
   <SiteMenuModal />
 </div>
-
-<!-- STYLE ////////////////////////////////////////////////////// -->
-<style>
-  div {
-    height: var(--viewport-height);
-    overflow-y: scroll;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-  }
-  div::-webkit-scrollbar {
-    display: none;
-  }
-</style>
