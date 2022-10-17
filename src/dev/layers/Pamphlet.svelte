@@ -3,10 +3,6 @@
   // IMPORT SCRIPTS ----------------------------------------------
   import { onMount, onDestroy } from "svelte";
 
-  // SITE SETTINGS ---------------------------------------
-  document.body.classList.add("pamphlet");
-  document.documentElement.classList.add("pamphlet");
-
   // PROPS ----------------------------------------------------
   export let totalSnapPointsOptions;
   export let trackCurrentSnapPoint = null;
@@ -99,10 +95,6 @@
   onDestroy(()=> {
     // EVENT LISTENERS ----------------------------
     document.removeEventListener("keydown", handleKeyDown);
-
-    // SITE SETTINGS ------------------------------
-    document.body.classList.remove("pamphlet");
-    document.documentElement.classList.remove("pamphlet");
   });
 
 </script>
