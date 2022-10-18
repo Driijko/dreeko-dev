@@ -73,9 +73,21 @@
         </div>
       </section>
     {:else if currentSelected === 1}
-      <section in:fly="{{delay: transitionDuration, duration: transitionDuration, x: window.innerWidth * 0.7}}" out:fly="{{duration:transitionDuration, x: window.innerWidth * 0.7}}">
+      <section 
+        in:fly="{{
+          delay: transitionDuration, 
+          duration: transitionDuration, 
+          x: window.innerWidth * 0.7
+        }}" out:fly="{{
+          duration:transitionDuration, 
+          x: window.innerWidth * 0.7
+        }}">
         <h3>CSS</h3>
-        <div class="description-body">
+        <div class="description-body" 
+          on:scroll|once={()=> main.scroll({
+            top: window.innerHeight, 
+            behavior: "smooth"
+          })}>
           <p class="sub-header">
             Cascading Style-Sheets
           </p>

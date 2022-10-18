@@ -61,10 +61,10 @@
       transition: transform 1s ease-out;
     }
     #area2.open {
-      transform: scale(1);
+      transform: scaleX(1);
     }
     #area2.closed {
-      transform: scale(0);
+      transform: scaleX(0);
     }
   }
   @media screen and (orientation: landscape) {
