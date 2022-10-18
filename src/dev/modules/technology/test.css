@@ -1,0 +1,16 @@
+a:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+@media screen and (orientation: portrait) {
+  ul {
+    flex-direction: column
+  }
+}
+
+@media screen and (orientation: landscape) {
+  ul {
+    flex-direction: row;
+  }
+}

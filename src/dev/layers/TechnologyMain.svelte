@@ -10,6 +10,6 @@
 
 <!-- MARKUP ////////////////////////////////////////////////////////// -->
 <main bind:this={main} class="regular-scroll">
-  <SiteHeader />
+  <!-- <SiteHeader /> -->
   <TechnologyList {main} />
 </main>

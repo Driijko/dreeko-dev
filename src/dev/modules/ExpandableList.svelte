@@ -4,10 +4,10 @@
   let viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
   
   // LOCAL STATE -----------------------------------------------------
-  let currentSelected = viewportOrientation === "landscape" ? 0 : null;
-  // let currentSelected = 0;
-  let area2Open = viewportOrientation === "landscape" ? true : false;
-  // let area2Open = true;
+  // let currentSelected = viewportOrientation === "landscape" ? 0 : null;
+  let currentSelected = 1;
+  // let area2Open = viewportOrientation === "landscape" ? true : false;
+  let area2Open = true;
 
   // EVENT HANDLERS ----------------------------------------------------
   function updateCurrentSelected(num) {
@@ -18,6 +18,7 @@
   }
   function closeArea2() {
     area2Open = false;
+    currentSelected = null;
   }
 
 </script>
@@ -33,6 +34,7 @@
           openArea2();
         }
       } 
+      {currentSelected}
     />
   </div>
   <div id="area2"
