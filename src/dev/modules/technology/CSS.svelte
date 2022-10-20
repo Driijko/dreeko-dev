@@ -19,7 +19,7 @@
     CSS is a coding language built for one purpose: to style HTML elements. While HTML provides content, structure and certain forms of interactivity, without CSS, web-pages would all look very, very ugly. It is through CSS that the front-end developer can pick out matching colors or interesting fonts, and construct layouts and animations. HTML delivers content, but CSS allows the developer to style that content into something attractive and stylistically compelling.
   </p>
   <figure>
-    <img src="./technology/css-pic1.png" alt="Some CSS code." />
+    <img src="./technology/css-pic1.webp" alt="Some CSS code." />
     <figcaption>
       Some typical CSS code.<br/>
       The <em>p</em> selects all paragraphs.
@@ -37,7 +37,7 @@
     It turns out that styling web elements is a fairly complicated thing, and CSS is in fact quite a bit more complex than HTML. CSS deals with layout, typography, colors, adjusting images and animations. Using CSS, a developer can change the color of a link when it is hovered over, or the image of the cursor when this happens, or they can adjust the layout of a page when a user views the page on mobile, versus when they view it on a desktop computer monitor. 
   </p>
   <figure>
-    <img src="./technology/css-pic2.png" alt="CSS code which causes a link to turn red and grow in size when hovered." />
+    <img src="./technology/css-pic2.webp" alt="CSS code which causes a link to turn red and grow in size when hovered." />
     <a style="font-size: 2rem;" href={null}>I'm a link!</a>
     <figcaption>
       This CSS code selects all links, <em>a</em>, and says that if a link is hovered over by the mouse, it's text turns red, and it grows in size by 120%.
@@ -47,7 +47,7 @@
     Among the most important problems that CSS tackles is layout. Because websites are viewed on a variety of different types of devices with different sizes and aspect-ratios of screens, website layout is a particularly tricky challenge, a challenge which developers call "responsive design". The original conception of the world-wide-web was as a series of inter-linked text documents, and so printed material texts provided an influential reference point in early approaches to website layout. However, as time went on and the conception of the internet expanded, this reference proved to be more and more limiting. The widespread adoption of smartphones following the release of the first Iphone in 2007 further complicated matters by forcing developers to consider designing for both desktop and mobile devices. CSS has evolved significantly since the late 1990s to address these problems, introducing two modules: Flexbox and Grid, which have become particularly important tools in responsive design, as well as media queries: blocks of code which adjust the style of a page specifically based on properties of a device, such as it's screen width or aspect-ratio.
   </p>
   <figure>
-    <img src="./technology/css-pic3.png" alt="CSS code demonstrating media queries." />
+    <img src="./technology/css-pic3.webp" alt="CSS code demonstrating media queries." />
     <figcaption>
       An example of media queries.<br/>
       This code says that if a device has a "portrait" aspect-ratio (probably a smartphone or tablet), the contents of a list should be organized in a column.<br/>
@@ -73,7 +73,7 @@
     One of the most exciting features of CSS is it's ability to create animations. Developers can animate based on user actions, such as hovering over an element or clicking it, or they can animate things when a page first loads, or have an animation loop indefinitely. Using animations, developers can move, rotate, scale and stretch elements, and this can in turn help to create more fluid, intuitive and compelling user interfaces.
   </p>
   <figure>
-    <img src="./technology/css-pic4.png" alt="CSS code demonstrating an animation design." />
+    <img src="./technology/css-pic4.webp" alt="CSS code demonstrating an animation design." />
     <div id="animation"></div>
   </figure>
   <p>

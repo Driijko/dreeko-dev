@@ -1,12 +1,12 @@
 <!-- SCRIPTS ///////////////////////////////////////////////// -->
 <script>
-  // IMPORT SCRIPTS -------------------------------------------
-  import {fly } from 'svelte/transition';
 
   // IMPORT COMPONENTS ---------------------------------------
   import ExpandableList from "../ExpandableList.svelte";
   import HTML from "./HTML.svelte";
   import CSS from "./CSS.svelte";
+  import JavaScript from './JavaScript.svelte';
+  import SVG from "./SVG.svelte";
 
   // PROPS ---------------------------------------------------
   export let main;
@@ -49,6 +49,10 @@
       <HTML {main} />
     {:else if currentSelected === 1}
       <CSS {main} />
+    {:else if currentSelected === 2}
+      <JavaScript {main} />
+    {:else if currentSelected === 3}
+      <SVG {main} />
     {/if}
     <button id="close-area2" type="button" on:click={closeArea2}>X</button>
   </div>
@@ -108,13 +112,14 @@
     border-radius: 0.3rem;
     background-color: var(--color1);
     color: var(--color2);
+    transition-property: width, height, font-size, background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
   }
   @media (hover:hover) {
-    .main-list-button:hover:not(.selected), .main-list-button:focus {
-      /* color: var(--color2); */
+    .main-list-button:hover:not(.selected), .main-list-button:focus:not(.selected) {
       background-color: var(--color3);
       transform: scale(1.15);
-      /* border-color: var(--color1); */
     }
     .main-list-button.selected {
       border-radius:0;
@@ -127,9 +132,6 @@
       transform: scale(1);
       background-color: var(--color1);
     }
-  }
-  #area2 {
-    background-color: var(--color1);
   }
   @media screen and (orientation: portrait) {
     #area2 {
@@ -161,7 +163,9 @@
   @media screen and (orientation: landscape) {
     #area2 {
       border: 0.5rem solid var(--color1);
+      background-color: var(--color1);
     }
+
     #close-area2 {
       display: none;
     }

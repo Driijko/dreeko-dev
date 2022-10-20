@@ -5,7 +5,7 @@
   
   // LOCAL STATE -----------------------------------------------------
   // let currentSelected = viewportOrientation === "landscape" ? 0 : null;
-  let currentSelected = 1;
+  let currentSelected = 3;
   // let area2Open = viewportOrientation === "landscape" ? true : false;
   let area2Open = true;
 
@@ -18,7 +18,9 @@
   }
   function closeArea2() {
     area2Open = false;
-    currentSelected = null;
+    const timerId = setTimeout(()=> {
+      currentSelected = null;
+    }, 1000);
   }
 
 </script>

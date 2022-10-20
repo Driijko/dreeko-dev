@@ -57,6 +57,7 @@
     font-family: "Montserrat", sans-serif;
   }
   .description-body {
+    border-top: 0.3rem solid var(--color2);
     height: 90%;
     padding: 1rem 0.5rem 0 3vw;
     line-height: 1.5;
@@ -103,11 +104,16 @@
     border-top: 0.3rem solid var(--color1-1);
     background-color: var(--color1-1);
     padding: 0.1rem 1rem;
+    width: 100%;
+    word-spacing: 0.2rem;
   }
   @media (hover:hover) {
     .description-body :global(p a:hover), .description-body :global(p a:focus) {
       color: var(--color2);
       background-color: var(--color1);
     }
+  }
+  @media screen and (orientation: landscape) {
+    
   }
 </style>
