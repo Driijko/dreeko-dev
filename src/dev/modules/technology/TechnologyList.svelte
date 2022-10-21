@@ -7,6 +7,7 @@
   import CSS from "./CSS.svelte";
   import JavaScript from './JavaScript.svelte';
   import SVG from "./SVG.svelte";
+  import React from "./React.svelte";
 
   // PROPS ---------------------------------------------------
   export let main;
@@ -53,6 +54,8 @@
       <JavaScript {main} />
     {:else if currentSelected === 3}
       <SVG {main} />
+    {:else if currentSelected === 4}
+      <React {main} />
     {/if}
     <button id="close-area2" type="button" on:click={closeArea2}>X</button>
   </div>

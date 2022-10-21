@@ -1,0 +1,17 @@
+import styled from "styled-components";
+
+const paragraph = styled.p`
+  padding: 1rem;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  max-width: 80ch;
+`;
+
+export default paragraph;
+
+
+
+
+
+
+

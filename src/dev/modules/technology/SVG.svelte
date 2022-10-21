@@ -15,7 +15,7 @@
   subHeader={"Scalable Vector Graphics"}
   wikiLink={"https://en.wikipedia.org/wiki/Scalable_Vector_Graphics"}
 >
-  <!-- <p>
+  <p>
     SVG is a markup language, originally created in 1999, for creating drawings. It includes a number of features to assist the creation of graphics, such as drawing simple shapes, curving lines, color gradients, or patterns, as well as altering graphics by applying transformations or filters to them.
   </p>
   <p>
@@ -36,8 +36,8 @@
   </p>
   <p>
     SVGs make drawing simple shapes... simple. Furthermore, SVGs allow one to draw any type of curving line using Bezier curves. Bezier curves allow one to draw a curve by specifying the beginning and ending points of a line, and then specifying one or two "control points", points which "pull" on the line, bending it's shape. By connecting a series of curving and straight lines, SVGs can draw any kind of shape.
-  </p> -->
-  <!-- <figure>
+  </p>
+  <figure>
     <svg class="container" viewBox="0 0 1920 1080">
       <rect x="100" y="100" width="500" height="880" />
       <circle cx="960" cy="540" r="300" />
@@ -50,8 +50,8 @@
   </figure>
   <p>
     When drawing shapes, we can colorize them using two different attributes, stroke and fill. The stroke is the outline of the shape, and the fill is the interior. We can give these areas different colors, and we can also give different properties to the stroke to alter it's appearance.
-  </p> -->
-  <!-- <figure>
+  </p>
+  <figure>
     <svg class="container" viewBox="0 0 1920 1080">
       <circle fill="black" cx="480" cy="100" r="50" />
       <line stroke="black" stroke-width="10" stroke-dasharray="20 20" 
@@ -80,8 +80,8 @@
     <figcaption>
       Here we see two Bezier curves (magenta) being pulled towards different "control points" (black).
     </figcaption>
-  </figure> -->
-  <!-- <figure>
+  </figure>
+  <figure>
     <svg class="container" viewBox="0 0 1920 1080">
       <circle fill="red" stroke="purple" stroke-width="100" 
         cx="25%" cy="50%" r="300"
@@ -95,11 +95,11 @@
     <figcaption>
       We can determine the colors of shapes using both the stroke and fill attributes.
     </figcaption>
-  </figure> -->
-  <!-- <p>
+  </figure>
+  <p>
     We can also use SVGs to create color gradients: linear, radial and conical. These allow us to create subtle transitions between two or more colors.
-  </p> -->
-  <!-- <figure>
+  </p>
+  <figure>
     <svg class="container" viewBox="0 0 1920 1080">
       <defs>
         <radialGradient id="RadialGradient1">
@@ -108,23 +108,25 @@
           <stop offset="100%" stop-color="blue" />
         </radialGradient>
       </defs>
-      <rect x="0" y="0" width="100%" height="100%" 
+      <rect x="0" y="0" width="100%" height="1080" 
         fill="url(#RadialGradient1)" 
       />
     </svg>
     <figcaption>
       An example of a radial gradient which goes from red to magenta to blue.
     </figcaption>
-  </figure> -->
-  <!-- <p>
+  </figure>
+  <p>
     SVGs can draw and manipulate text, including the path along which the text is drawn, allowing for effects that would be very difficult to achieve in a browser using CSS.
-  </p> -->
-  <!-- <figure>
+  </p>
+  <figure>
     <svg class="container" viewBox="0 0 1920 1080">
       <defs>
         <path id="path" d="M 400 1000
           Q 0 0 960 400
-          L 1920 1080
+          L 1600 300
+          Q 1800 540 1600 800
+          H 200
         "/>
       </defs>
       <text stroke="blue">
@@ -134,11 +136,11 @@
     <figcaption>
       With SVG we can alter the path of text to follow Bezier curves.
     </figcaption>
-  </figure> -->
-  <!-- <p>
+  </figure>
+  <p>
     One of the more powerful features of SVGs is the creation of patterns, which allow us to take a graphic and re-draw it, with potential alterations, an indefinite number of times. This can make it quite easy to create complex graphics from a small amount of code.
-  </p> -->
-  <!-- <figure>
+  </p>
+  <figure>
     <svg class="container" viewBox="1920 1080">
       <defs>
         <pattern id="pattern" viewBox="0 0 40 40" width="10%" height="10%">
@@ -152,10 +154,10 @@
     <figcaption>
       We can create a repeating pattern that covers an indefinitely large area with very little code.
     </figcaption>
-  </figure> -->
-  <!-- <p>
+  </figure>
+  <p>
     Like CSS, SVGs also have the ability to filter other graphics, allowing for effects like blurring and color alteration. However, SVG filters are quite a bit more sophisticated than what CSS has on offer, allowing filters to be fed to each other in a sequence to create effects not possible in CSS.
-  </p> -->
+  </p>
   <figure>
     <img src="./technology/svg-pic5.jpg" alt="A salad." />
     <svg class="container" viewBox="0 0 1920 1080">
