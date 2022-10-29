@@ -8,6 +8,7 @@
   import JavaScript from './JavaScript.svelte';
   import SVG from "./SVG.svelte";
   import React from "./React.svelte";
+  import Svelte from "./Svelte.svelte";
 
   // PROPS ---------------------------------------------------
   export let main;
@@ -56,6 +57,8 @@
       <SVG {main} />
     {:else if currentSelected === 4}
       <React {main} />
+    {:else if currentSelected === 5}
+      <Svelte {main} />
     {/if}
     <button id="close-area2" type="button" on:click={closeArea2}>X</button>
   </div>
@@ -139,7 +142,7 @@
   @media screen and (orientation: portrait) {
     #area2 {
       position: relative;
-      border-top: 0.3rem solid var(--color2);
+      border-top: 0.3rem solid var(--color2-1);
     }
     #close-area2 {
       display: flex;
@@ -154,7 +157,7 @@
       font-weight: bold;
       height: 10%;
       width: calc(var(--viewport-height)/10);
-      border-left: 0.3rem solid var(--color2);
+      border-left: 0.3rem solid var(--color2-1);
     }
   }
   @media (hover:hover) and (orientation: portrait) {

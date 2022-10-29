@@ -57,7 +57,6 @@
     font-family: "Montserrat", sans-serif;
   }
   .description-body {
-    border-top: 0.3rem solid var(--color2);
     height: 90%;
     padding: 1rem 0.5rem 0 3vw;
     line-height: 1.5;
@@ -113,7 +112,9 @@
       background-color: var(--color1);
     }
   }
-  @media screen and (orientation: landscape) {
-    
+  @media screen and (orientation: portrait) {
+    .description-body {
+      border-top: 0.3rem solid var(--color2-1);
+    }
   }
 </style>

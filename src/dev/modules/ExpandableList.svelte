@@ -5,7 +5,7 @@
   
   // LOCAL STATE -----------------------------------------------------
   // let currentSelected = viewportOrientation === "landscape" ? 0 : null;
-  let currentSelected = 4;
+  let currentSelected = 5;
   // let area2Open = viewportOrientation === "landscape" ? true : false;
   let area2Open = true;
 
