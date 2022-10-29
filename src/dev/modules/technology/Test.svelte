@@ -1,28 +1,20 @@
 <!-- svelte-ignore missing-declaration -->
 
 <script>
-  const animals = [{
-    name: "whale",
-    type: "mammal",
-    food: "krill",
-  }, {
-    name: "fox",
-    type: "mammal",
-    food: "mice",
-  }, {
-    name: "chameleon",
-    type: "reptile",
-    food: "bugs",
-  }];
+  import { fade } from "svelte/transition";
+  let checked = [true, true, true, true];
 </script>
 
-<ul>
-  {#each animals as animal}
-    <li>
-      A {animal.name} is a {animal.type} that eats {animal.food}.
-    </li>
-  {/each}
-</ul>
+
+{#each checked as checklistItem, index}
+  <input type="checkbox" bind:checked={checked[index]} />
+  {#if checked[index]}
+    <img transition:fade src={`./images/svg${index}.svg`} alt="Animal." />
+  {/if}
+{/each}
+
+
+
 
 
 
