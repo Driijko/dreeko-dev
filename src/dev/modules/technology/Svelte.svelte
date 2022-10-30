@@ -22,7 +22,7 @@
 <TechnologyListArticle 
   {main}
   header={"Svelte"}
-  wikiLink={"https://en.wikipedia.org/wiki/Svelte"}
+  link={["https://svelte.dev/", "the Svelte website."]}
 >
   <p>
     In the realm of JavaScript frameworks, Svelte is the new arrival, having really only started to gain traction amongst developers following the release of version 3 in 2019. However, Svelte has quickly gained popularity in the front-end developer community thanks to it's innovative, original and intuitive design.

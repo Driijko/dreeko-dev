@@ -13,7 +13,7 @@
   {main}
   header={"CSS"}
   subHeader={"Cascading Style-Sheets"}
-  wikiLink={"https://en.wikipedia.org/wiki/CSS"}
+  link={["https://developer.mozilla.org/en-US/docs/Web/CSS", "MDN"]}
 >
   <p>
     CSS is a coding language built for one purpose: to style HTML elements. While HTML provides content, structure and certain forms of interactivity, without CSS, web-pages would all look very, very ugly. It is through CSS that the front-end developer can pick out matching colors or interesting fonts, and construct layouts and animations. HTML delivers content, but CSS allows the developer to style that content into something attractive and stylistically compelling.

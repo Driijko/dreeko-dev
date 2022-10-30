@@ -13,7 +13,7 @@
   {main}
   header={"HTML"}
   subHeader={"HyperText Markup Language"}
-  wikiLink={"https://en.wikipedia.org/wiki/HTML"}
+  link={["https://developer.mozilla.org/en-US/docs/Web/HTML", "MDN"]}
 >
     <p>
       HTML is perhaps the most fundamental coding language in the creation of the world-wide-web. Designed by Sir Tim Berners Lee in 1990, HTML became the foundation upon which virtually all of the contemporary internet has been built.

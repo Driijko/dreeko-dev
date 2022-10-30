@@ -12,7 +12,7 @@
 <TechnologyListArticle 
   {main}
   header={"React"}
-  wikiLink={"https://en.wikipedia.org/wiki/React_(JavaScript_library)"}
+  link={["https://reactjs.org/", "the React website"]}
 >
   <p>
     Since the 1990s, web devlopment has become increasingly ambitious and complex. The world's more popular websites, such as Facebook, Youtube or Wikipedia, connect vast quantities of code distributed over a global network. With increasing complexity, developers required new tools that were optimized to handle this complexity. It was from this situation that JavaScript frameworks developed: JavaScript libraries that standadize how developers write code, assist them in tackling common but difficult problems, and guide them away from potential pitfalls. 

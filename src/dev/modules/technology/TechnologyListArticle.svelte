@@ -6,7 +6,7 @@
   // PROPS --------------------------------------------------
   export let header;
   export let subHeader;
-  export let wikiLink;
+  export let link;
   export let main;
 
   // LOCAL SETTINGS ----------------------------------------------
@@ -37,7 +37,7 @@
       </p>
     {/if}
     <slot />
-    <p>Learn more at <a href={wikiLink} target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+    <p>Learn more at: <a href={link[0]} target="_blank" rel="noopener noreferrer">{link[1]}</a></p>
   </div>
 </section>
 
@@ -91,6 +91,7 @@
   }
   .description-body :global(a) {
     text-decoration: underline;
+    word-spacing: 0;
   }
   .description-body :global(input) {
     font-size: 1rem;

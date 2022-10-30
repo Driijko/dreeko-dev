@@ -13,7 +13,7 @@
   {main}
   header={"SVG"}
   subHeader={"Scalable Vector Graphics"}
-  wikiLink={"https://en.wikipedia.org/wiki/Scalable_Vector_Graphics"}
+  link={["https://developer.mozilla.org/en-US/docs/Web/SVG", "MDN"]}
 >
   <p>
     SVG is a markup language, originally created in 1999, for creating drawings. It includes a number of features to assist the creation of graphics, such as drawing simple shapes, curving lines, color gradients, or patterns, as well as altering graphics by applying transformations or filters to them.

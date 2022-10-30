@@ -9,6 +9,7 @@
   import SVG from "./SVG.svelte";
   import React from "./React.svelte";
   import Svelte from "./Svelte.svelte";
+  import GSAP from "./GSAP.svelte";
 
   // PROPS ---------------------------------------------------
   export let main;
@@ -59,6 +60,8 @@
       <React {main} />
     {:else if currentSelected === 5}
       <Svelte {main} />
+    {:else if currentSelected === 6}
+      <GSAP {main} />
     {/if}
     <button id="close-area2" type="button" on:click={closeArea2}>X</button>
   </div>

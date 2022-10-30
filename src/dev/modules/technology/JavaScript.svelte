@@ -12,7 +12,7 @@
 <TechnologyListArticle 
   {main}
   header={"JavaScript"}
-  wikiLink={"https://en.wikipedia.org/wiki/JavaScript"}
+  link={["https://developer.mozilla.org/en-US/docs/Web/JavaScript", "MDN"]}
 >
   <p>
     While HTML is the foundation upon which the world-wide-web has been built, by itself, HTML has limited capabilities. HTML is designed to provide structured content, and CSS is designed to style that content. In the mid-90s, JavaScript emerged as a way to offer front-end developers more control over the <em>behavior</em> of websites. While HTML handles certain forms of interactive interfaces, such as links and forms, there are many types of interface designs not possible with HTML alone. For more complex, dynamic designs, JavaScript is the tool needed.
