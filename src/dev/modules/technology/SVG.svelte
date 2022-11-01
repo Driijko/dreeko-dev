@@ -81,6 +81,7 @@
       Here we see two Bezier curves (magenta) being pulled towards different "control points" (black).
     </figcaption>
   </figure>
+  <br/>
   <figure>
     <svg class="container" viewBox="0 0 1920 1080">
       <circle fill="red" stroke="purple" stroke-width="100" 
@@ -141,7 +142,7 @@
     One of the more powerful features of SVGs is the creation of patterns, which allow us to take a graphic and re-draw it, with potential alterations, an indefinite number of times. This can make it quite easy to create complex graphics from a small amount of code.
   </p>
   <figure>
-    <svg class="container" viewBox="1920 1080">
+    <svg class="container" viewBox="0 0 1920 1080">
       <defs>
         <pattern id="pattern" viewBox="0 0 40 40" width="10%" height="10%">
           <circle cx="20" cy="20" r="30" stroke="red" stroke-width="10"/>

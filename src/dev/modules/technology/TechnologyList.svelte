@@ -75,6 +75,8 @@
   #area1 {
     padding: 1rem;
     background-color: var(--color2);
+    opacity: 0;
+    animation: fade-in 2s 1s forwards ease-out;
   }
   h2 {
     background-color: var(--color1-1);
@@ -95,8 +97,8 @@
     position: absolute;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 1rem;
-    animation: fade-out 5s 2s ease-out forwards;
+    font-size: 0.8rem;
+    animation: fade-out 5s 4s ease-out forwards;
     bottom: 0%;
   }
   ul {
@@ -173,6 +175,8 @@
     #area2 {
       border: 0.5rem solid var(--color1);
       background-color: var(--color1);
+      opacity: 0;
+      animation: fade-in 2s 2s forwards ease-out;
     }
 
     #close-area2 {

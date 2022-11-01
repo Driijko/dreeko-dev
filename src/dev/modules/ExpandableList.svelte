@@ -4,10 +4,8 @@
   let viewportOrientation = window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
   
   // LOCAL STATE -----------------------------------------------------
-  // let currentSelected = viewportOrientation === "landscape" ? 0 : null;
-  let currentSelected = 6;
-  // let area2Open = viewportOrientation === "landscape" ? true : false;
-  let area2Open = true;
+  let currentSelected = viewportOrientation === "landscape" ? 0 : null;
+  let area2Open = viewportOrientation === "landscape" ? true : false;
 
   // EVENT HANDLERS ----------------------------------------------------
   function updateCurrentSelected(num) {
