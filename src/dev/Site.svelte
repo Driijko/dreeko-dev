@@ -9,6 +9,7 @@
   import Home from "./pages/Home.svelte";
   import Portfolio from "./pages/Portfolio.svelte";
   import Technology from "./pages/Technology.svelte";
+  import CV from "./pages/CV.svelte";
 
   // RUN SCRIPTS ----------------------------------------------------
   setUp();
@@ -32,6 +33,10 @@
       <Portfolio />
     {/key}
   {:else if $currentPageName === "technology"}
-    <Technology />
+    {#key $resetCount}
+      <Technology />
+    {/key}
+  {:else if $currentPageName === "cv"}
+    <CV />
   {/if}
 </div>

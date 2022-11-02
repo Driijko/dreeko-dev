@@ -43,7 +43,7 @@
       <circle cx="960" cy="540" r="300" />
       <ellipse cx="1600" cy="540" rx="250" ry="440" />
     </svg>
-    <img src="./technology/svg-pic1.png" alt="SVG code that draws a rectangle, circle and ellipse." />
+    <img src="./technology/svg-pic1.webp" alt="SVG code that draws a rectangle, circle and ellipse." />
     <figcaption>
       Drawing simple shapes with SVG is easy.
     </figcaption>
@@ -76,7 +76,7 @@
         Q 1800 500 1920 1080"
       />
     </svg>
-    <img src="./technology/svg-pic2.png" alt="SVG code demonstrating Bezier curves" />
+    <img src="./technology/svg-pic2.webp" alt="SVG code demonstrating Bezier curves" />
     <figcaption>
       Here we see two Bezier curves (magenta) being pulled towards different "control points" (black).
     </figcaption>
@@ -92,7 +92,7 @@
         cx="75%" cy="50%" r="300"
       />
     </svg>
-    <img src="./technology/svg-pic3.png" alt="SVG code demonstrating the use of the fill and stroke attributes to color a shape." />
+    <img src="./technology/svg-pic3.webp" alt="SVG code demonstrating the use of the fill and stroke attributes to color a shape." />
     <figcaption>
       We can determine the colors of shapes using both the stroke and fill attributes.
     </figcaption>
@@ -151,7 +151,7 @@
       </defs>
       <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
     </svg>
-    <img src="./technology/svg-pic4.png" alt="SVG code demonstrating how to make a pattern." />
+    <img src="./technology/svg-pic4.webp" alt="SVG code demonstrating how to make a pattern." />
     <figcaption>
       We can create a repeating pattern that covers an indefinitely large area with very little code.
     </figcaption>
@@ -160,7 +160,7 @@
     Like CSS, SVGs also have the ability to filter other graphics, allowing for effects like blurring and color alteration. However, SVG filters are quite a bit more sophisticated than what CSS has on offer, allowing filters to be fed to each other in a sequence to create effects not possible in CSS.
   </p>
   <figure>
-    <img src="./technology/svg-pic5.jpg" alt="A salad." />
+    <img src="./technology/svg-pic5.webp" alt="A salad." />
     <svg class="container" viewBox="0 0 1920 1080">
       <defs>
         <filter id="filter">
@@ -176,11 +176,11 @@
         </filter>
       </defs>
       <image x="0" y="0" width="100%" height="100%" 
-        href="./technology/svg-pic5.jpg" 
+        href="./technology/svg-pic5.webp" 
         filter="url(#filter)"
       />
     </svg>
-    <img src="./technology/svg-pic6.png" alt="SVG code showing the application of filters to an image." />
+    <img src="./technology/svg-pic6.webp" alt="SVG code showing the application of filters to an image." />
     <figcaption>
       We can feed the results of one SVG filter to the next, to alter images or other types of graphics in a variety of ways.
     </figcaption>

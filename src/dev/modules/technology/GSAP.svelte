@@ -123,7 +123,7 @@
     GSAP allows the developer to design animations within JavaScript, making it easy to access variables, data-structures, conditional logic flow and other aspects of JavaScript. This in turn can aid in integrating animations with other parts of a website's design.
   </p>
   <figure>
-    <img src="./technology/gsap-pic1.png" alt="Code demonstrating how to create a simple animation using GSAP." />
+    <img src="./technology/gsap-pic1.webp" alt="Code demonstrating how to create a simple animation using GSAP." />
     <div id="animation1"></div>
     <figcaption>
       Here we see a simple animation in which GSAP is used to alter the color, size, shape and rotation of an HTML element. We can repeat an animation indefinitely using a value of "-1" for the "repeat" property, and cause the animation to reverse itself using the "yoyo" property.
@@ -133,8 +133,8 @@
     One of GSAP's most distinguishing features is it's ability to work well with SVGs. Since SVGs are a very powerful and responsive-design-friendly way to draw in the browser, this aspect of GSAP is extremely helpful. But GSAP can also work with regular HTML elements, as well as with the HTML canvas, or with 3D WebGL objects.
   </p>
   <figure>
-    <img src="./technology/gsap-pic2.png" alt="Code showing how an SVG path is specified prior to being animated." />
-    <img src="./technology/gsap-pic3.png" alt="Code demonstrating the application of GSAP to manipulating SVGs" />
+    <img src="./technology/gsap-pic2.webp" alt="Code showing how an SVG path is specified prior to being animated." />
+    <img src="./technology/gsap-pic3.webp" alt="Code demonstrating the application of GSAP to manipulating SVGs" />
     <svg id="animation2" viewBox="0 0 1000 1000">
       <path d="M 0 0
         Q 1000 500 0 1000
@@ -169,7 +169,7 @@
     Staggers make animating multiple objects in a harmonious, synchronized way easy to do.
   </p>
   <figure>
-    <img src="./technology/gsap-pic4.png" alt="Code demonstrating the ability of GSAP to stagger animations applied to multiple elements." />
+    <img src="./technology/gsap-pic4.webp" alt="Code demonstrating the ability of GSAP to stagger animations applied to multiple elements." />
     <svg id="animation3" viewBox="0 0 1000 200">
       <circle cx="50" cy="50" r="50" />
       <circle cx="150" cy="50" r="50" />
@@ -190,7 +190,7 @@
     Timelines give developers exact control over the timing of multiple, inter-related animations, such that they can be coordinated into a larger, emergent animation.
   </p>
   <figure>
-    <img src="./technology/gsap-pic5.png" alt="GSAP code demonstrating how to organize an animation into a timeline." />
+    <img src="./technology/gsap-pic5.webp" alt="GSAP code demonstrating how to organize an animation into a timeline." />
     <svg id="animation4" viewBox="0 0 1000 1000" >
       <circle cx="100" cy="100" r="50" />
     </svg>
