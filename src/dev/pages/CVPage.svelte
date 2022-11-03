@@ -7,8 +7,7 @@
   import { currentPage } from "../stores/site.js";
 
   // IMPORT COMPONENTS ---------------------------------------------
-  import SiteHeader from "../modules/SiteHeader.svelte";
-  import CVMain from "../layers/CVMain.svelte";
+  import CVMainLayer from "../layers/CVMainLayer.svelte";
   import SiteMenuModal from "../layers/SiteMenuModal.svelte";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
@@ -22,8 +21,7 @@
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={page} class="page">
-  <SiteHeader />
-  <CVMain />
+  <CVMainLayer />
   <SiteMenuModal />
 </div>
 
