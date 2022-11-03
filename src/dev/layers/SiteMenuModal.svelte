@@ -109,6 +109,10 @@
   border-left: 0.2rem solid var(--color2);
 }
 
+.excluded {
+  display: none;
+}
+
 
 @media only screen and (min-width: 600px) {
   #site-menu {
