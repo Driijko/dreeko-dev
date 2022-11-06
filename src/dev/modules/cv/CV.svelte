@@ -9,7 +9,7 @@ import { slide } from "svelte/transition";
     "landscape" : "portrait";
 
   // LOCAL STATE -------------------------------------------------
-  const cvSectionsOpen = [false, false, false, false, false, false, false];
+  const cvSectionsOpen = [false, false, false, false, false, false];
 
   // EVENT HANDLERS ---------------------------------------------
   function handleClick(index, id) {
@@ -309,6 +309,91 @@ import { slide } from "svelte/transition";
           {/if}
 
         </section>
+
+        <section class="cv-section">
+
+          <header>
+            <h4>SKILLS / TECHNIQUES</h4>
+            <button class="portrait" type="button"
+              on:click={()=> handleClick(4, "#line5")}
+            >
+            <svg viewBox="0 0 100 100">
+              <line x1="10" y1="50" x2="90" y2="50" />
+              <line id="line5" x1="50" y1="10" x2="50" y2="90" />
+            </svg>
+            </button>
+          </header>
+
+          {#if cvSectionsOpen[4] || viewportOrientation === "landscape"}
+            <div transition:slide>
+              <ul id="skills-list">
+                <li>Responsive Design</li>
+                <li>Responsive Images</li>
+                <li>Page Load Performance Optimization</li>
+                <li>Snap-Scroll / Viewport-Based Layouts</li>
+                <li>Animated Page Entrances / Exits</li>
+                <li>Custom Audio / Animation Players</li>
+                <li>Custom SVG Icons</li>
+                <li>Geometrical Visual Themes</li>
+                <li>Texture & Gradients Visual Themes</li>
+                <li>SEO</li>
+                <li>Custorm Form Elements</li>
+                <li>Logo / Branding Design</li>
+              </ul>
+            </div>
+          {/if}
+
+        </section>
+
+        <section class="cv-section">
+
+          <header>
+            <h4>EDUCATION / TRAINING</h4>
+            <button class="portrait" type="button"
+              on:click={()=> handleClick(5, "#line6")}
+            >
+            <svg viewBox="0 0 100 100">
+              <line x1="10" y1="50" x2="90" y2="50" />
+              <line id="line6" x1="50" y1="10" x2="50" y2="90" />
+            </svg>
+            </button>
+          </header>
+
+          {#if cvSectionsOpen[5] || viewportOrientation === "landscape"}
+            <div transition:slide>
+              <section class="cv-sub-section">
+                <h5>Frontend Masters, Online</h5>
+                <p class="date">01/2022 - Present</p>
+                <p class="description">
+                  Studied performance optimization, SVG, advanced JavaScript, Svelte, design, algorithms and data-structures.
+                </p>
+              </section>
+              <section class="cv-sub-section">
+                <h5>Interview Cake, Online</h5>
+                <p class="date">05/2020 - 09/2020</p>
+                <p class="description">
+                  Studied implementing data structures and algorithms in JavaScript, including linked lists, trees, graphs, sorting, searching, dynamic programming, and recursion.
+                </p>
+              </section>
+              <section class="cv-sub-section">
+                <h5>Recurse Center, New York</h5>
+                <p class="date">01/2020 - 06/2020</p>
+                <p class="description">
+                  Met programmers from all over the world. Studied React, Node, data structures and algorithms, generative art, game design.
+                </p>
+              </section>
+              <section class="cv-sub-section">
+                <h5>Concordia University, Montreal</h5>
+                <p class="date">2005 - 2009</p>
+                <p class="description">
+                  BA in Linguistics, minor in Philosophy.
+                </p>
+              </section>
+            </div>
+          {/if}
+
+        </section>
+
       </div>
 
     </div>
@@ -410,11 +495,18 @@ import { slide } from "svelte/transition";
   }
   #technology-list {
     line-height: 1.5;
-    max-width: 80%;
   }
   #technology-list li {
     display: flex;
     justify-content: space-between;
+    max-width: 20rem;
+  }
+  #skills-list {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 0.8rem;
   }
 
   @media screen and (orientation: portrait) {
