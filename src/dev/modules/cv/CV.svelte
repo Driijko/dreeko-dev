@@ -1,6 +1,36 @@
 <!-- SCRIPTS ///////////////////////////////////////////////// -->
 <script>
+    import Gsap from "../technology/GSAP.svelte";
 
+
+  // LOCAL STATE -------------------------------------------------
+  const cvSectionsOpen = [false, false, false, false, false, false, false];
+
+  // EVENT HANDLERS ---------------------------------------------
+  function handleClick(index, id) {
+    cvSectionsOpen[index] = !cvSectionsOpen[index];
+    if (cvSectionsOpen[index]) {
+      gsap.to(id, {
+        duration: 1,
+        attr: {
+          x1: 10,
+          y1: 50,
+          x2: 90,
+          y2: 50,
+        },
+      });
+    } else {
+      gsap.to(id, {
+        duration: 1,
+        attr: {
+          x1: 50,
+          y1: 10,
+          x2: 50,
+          y2: 90,
+        },
+      });
+    };
+  }
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////// -->
@@ -10,11 +40,13 @@
     <p><a id="download-link" href="" download>Download pdf version</a></p>
   </header>
   <section id="cv">
-    <header>
+
+    <header id="cv-header">
       <h3>Andrij Radio</h3>
       <p>Front-End Web-Developer</p>
       <p>Creative web-developer,<br class:no-display={window.innerWidth > 1000} /> passionate about design,<br class:no-display={window.innerWidth > 1000} /> aesthetics and cutting-edge tech.</p>
     </header>
+
     <address>
       <ul>
         <div>
@@ -60,6 +92,50 @@
 
       </ul>
     </address>
+
+    <div id="column-container">
+      <div id="column1" class="column">
+
+        <section id="cv-section1" class="cv-section" class:open={cvSectionsOpen[0]}>
+
+          <header>
+            <h4>Work Experience</h4>
+            <button class="portrait" type="button"
+              on:click={()=> handleClick(0, "#line1")}
+            >
+            <svg viewBox="0 0 100 100">
+              <line x1="10" y1="50" x2="90" y2="50" />
+              <line id="line1" x1="50" y1="10" x2="50" y2="90" />
+            </svg>
+            </button>
+          </header>
+
+          <section class="cv-sub-section">
+            <h5>Freelance Web Developer</h5>
+            <p class="date">06/2020 - Present</p>
+            <p class="description">
+              Design, build and deploy web-sites from the ground-up, including custom layouts, icons and animations. Communicate with clients with a variety of interests to achieve specific goals, as well as re-designing based on changing interests.
+            </p>
+          </section>
+
+        </section>
+
+        <section class="cv-section">
+          <header>
+            <h4>Projects</h4>
+            <button class="portrait" type="button">+</button>
+          </header>
+        </section>
+
+      </div>
+
+      <div id="column2" class="column">
+
+      </div>
+
+    </div>
+
+
   </section>
 </div>
 
@@ -79,6 +155,7 @@
   }
   #page-header {
     line-height: 1.5;
+    display: none;
   }
   h2 {
     font-family: "Julius Sans One", sans-serif;
@@ -95,7 +172,7 @@
     background-color: var(--color2);
     font-family: "Montserrat", sans-serif;
   }
-  #cv header {
+  #cv-header {
     background-color: var(--color2-3);
     color: var(--color1);
     display: flex;
@@ -103,17 +180,19 @@
     justify-content: center;
     row-gap: 1rem;
     padding: 1rem;
+    display: none;
   }
   h3 {
     font-size: 2rem;
   }
-  #cv header p:nth-of-type(1) {
+  #cv-header p:nth-of-type(1) {
     font-size: 1.2rem;
     font-weight: bold;
   }
   address {
     background-color: var(--color1);
     color: var(--color2);
+    display: none;
   }
   address ul {
     display: flex;
@@ -139,6 +218,20 @@
     font-size: 0.7rem;
     column-gap: 0.5rem;
   }
+  .cv-sub-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  .date {
+    color: var(--color1-4);
+  }
+  .description {
+    line-height: 1.3;
+  }
 
   @media screen and (orientation: portrait) {
     #background {
@@ -147,8 +240,49 @@
     #cv {
       width: 100%;
     }
-    #cv header {
+    #cv-header {
       line-height: 1.2;
+    }
+    .cv-section {
+      border: 0.3rem solid var(--color1);
+      transition: height 0.5s ease-out;
+      overflow: hidden;
+      height: 3.75rem;
+    }
+    #cv-section1.open {
+      height: 20rem;
+    }
+    .cv-section > header {
+      background-color: var(--color2-1);
+      display: flex;
+      justify-content: space-between;
+      align-items:center;
+      column-gap: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      border-bottom: 0.3rem solid var(--color1);
+    }
+    .cv-section > header button {
+      font-weight: bold;
+      font-size: 2rem;
+      border: 0.1rem solid var(--color1);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.3rem;
+      width: 2rem;
+    }
+    .cv-section > header button svg {
+      width: 100%;
+      stroke-width: 10;
+      /* border: 1px solid red; */
+    }
+    .cv-section > header button svg line {
+      stroke: var(--color1);
+      stroke-width: 15;
+    }
+    .cv-sub-section {
+      padding: 1rem;
     }
   }
   @media screen and (orientation: landscape) {
@@ -159,13 +293,37 @@
       aspect-ratio: 8.5 / 11;
       width: 40rem;
     }
+    #column-container {
+      padding: 1rem;
+      display: flex;
+    }
+    .column {
+      width: 50%;
+    }
+    .cv-section {
+      margin-bottom: 2rem;
+    }
+    .cv-section > header {
+      margin-bottom: 1rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      text-decoration: underline;
+      color: var(--color1-4);
+    }
+    .date {
+      font-size: 0.9rem;
+    }
+    .description {
+      font-size: 0.8rem;
+    }
   }
   @media (hover: hover) {
     #download-link:hover, #download-link:focus {
       color: var(--color3);
       /* transform: scale(1.2); */
     }
-    #cv header p:nth-of-type(2) {
+    #cv-header p:nth-of-type(2) {
       font-size: 0.8rem;
     }
     address a:hover, address a:focus {
