@@ -1,7 +1,8 @@
 <!-- SCRIPTS ///////////////////////////////////////////////// -->
 <script>
   // IMPORT SCRIPTS ---------------------------------------------
-  import { slide } from "svelte/transition";
+  import { transition_in } from "svelte/internal";
+import { slide } from "svelte/transition";
 
   // SITE STATE -------------------------------------------------
   const viewportOrientation = window.innerWidth >= window.innerHeight ?
@@ -100,10 +101,10 @@
     <div id="column-container">
       <div id="column1" class="column">
 
-        <section id="cv-section1" class="cv-section" class:open={cvSectionsOpen[0]}>
+        <section class="cv-section">
 
           <header>
-            <h4>Work Experience</h4>
+            <h4>WORK EXPERIENCE</h4>
             <button class="portrait" type="button"
               on:click={()=> handleClick(0, "#line1")}
             >
@@ -130,9 +131,73 @@
 
         <section class="cv-section">
           <header>
-            <h4>Projects</h4>
-            <button class="portrait" type="button">+</button>
+            <h4>PROJECTS</h4>
+            <button class="portrait" type="button"
+              on:click={()=> handleClick(1, "#line2")}
+            >
+            <svg viewBox="0 0 100 100">
+              <line x1="10" y1="50" x2="90" y2="50" />
+              <line id="line2" x1="50" y1="10" x2="50" y2="90" />
+            </svg>
+            </button>
           </header>
+
+          {#if cvSectionsOpen[1] || viewportOrientation === "landscape"}
+            <div transition:slide>
+              <p class="note">* For more details: <a href={null}>portfolio page</a> </p>
+              <section class="cv-sub-section">
+                <h5>Therapist Professional Profile</h5>
+                <p class="date">01/2022 - Present</p>
+                <p class="description">
+                  Profile page for the private practice of Toronto therapist Tara McMahon. Developed a visual design utilizing linear gradients and textures to produce a relaxing, friendly, yet professional tone. Animated page entrances that reinforce semantic design. Logo design. <a href="https://driijko.github.io/tara-mcmahon">Visit website.</a>
+                </p>
+              </section>
+              <section class="cv-sub-section">
+                <h5>Radio-Play Streaming Site</h5>
+                <p class="date">08/2021 - 02/2022</p>
+                <p class="description">
+                  Website for streaming the sci-fi radio-play Caretakers of the Waiting, with customized animations accompanying each act of the play. Use of SVG and GSAP3 animation library. <a href="https://driijko.github.io/caretakers-of-the-waiting">Visit website.</a>
+                </p>
+              </section>
+              <section class="cv-sub-section">
+                <h5>Music Group Album Profile</h5>
+                <p class="date">01/2022 - 03/2022</p>
+                <p class="description">
+                  Website for streaming the album <i>mood</i> by Toronto group <em>nonono</em>. Customized and animated multi-track audio/animation player, with distinct animations for each album track. Use of SVG, and GSAP3 animation library. <a href="https://driijko.github.io/nonono-mood">Visit website.</a>
+                </p>
+              </section>
+              <section class="cv-sub-section">
+                <h5>Essay on Piet Mondrian</h5>
+                <p class="date">10/2021 - 05/2022</p>
+                <p class="description">
+                  Website hosting a multi-chapter essay on the life and art of famous abstract painter Piet Mondrian. Visual design and animations apply Mondrian's aesthetic to web-design style and layout. <a href="https://driijko.github.io/mondrian">Visit website.</a>
+                </p>
+              </section>
+            </div>
+          {/if}
+
+        </section>
+
+        <section class="cv-section">
+          <header>
+            <h4>CAREER GOALS</h4>
+            <button class="portrait" type="button"
+              on:click={()=> handleClick(2, "#line3")}
+            >
+            <svg viewBox="0 0 100 100">
+              <line x1="10" y1="50" x2="90" y2="50" />
+              <line id="line3" x1="50" y1="10" x2="50" y2="90" />
+            </svg>
+            </button>
+          </header>
+          
+          {#if cvSectionsOpen[2] || viewportOrientation === "landscape"}
+            <div transition:slide>
+              <p class="description">
+                My main interest is in creating user flow through optimizing performance, designing intuitive, "tactile" interfaces, and providing continuity through animation. The technologies that most excite me currently are Svelte, SVG and the GSAP3 animation library. I look forward to learning about data visualization, server-side rendering and the JAMstack. I would like to become a full-stack developer, as well as an expert in web-design and animation.
+              </p>
+            </div>
+          {/if}
         </section>
 
       </div>
@@ -229,9 +294,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 0.5rem;
-  }
-  h5 {
-    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
   }
   .date {
     color: var(--color1-4);
@@ -277,7 +340,6 @@
     .cv-section > header button svg {
       width: 100%;
       stroke-width: 10;
-      /* border: 1px solid red; */
     }
     .cv-section > header button svg line {
       stroke: var(--color1);
@@ -285,9 +347,15 @@
     }
     .cv-section > div {
       background-color: var(--color2);
-    }
-    .cv-sub-section {
       padding: 1rem;
+    }
+    .note {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: var(--color1-4)
+    }
+    h5 {
+      font-size: 1.2rem;
     }
   }
   @media screen and (orientation: landscape) {
@@ -296,7 +364,7 @@
     }
     #cv {
       aspect-ratio: 8.5 / 11;
-      width: 40rem;
+      width: 50rem;
       background-color: var(--color2);
     }
     #column-container {
@@ -313,15 +381,31 @@
       margin-bottom: 1rem;
     }
     h4 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-decoration: underline;
       color: var(--color1-4);
     }
+    .note {
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: var(--color1-4);
+      margin-bottom: 1rem;
+    }
+    h5 {
+      font-size: 1rem;
+    }
     .date {
-      font-size: 0.9rem;
+      font-size: 0.6rem;
+      font-weight: bold;
+      letter-spacing: 0.05rem;
+      font-style: italic;
     }
     .description {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
+      font-weight: bold;
+      word-spacing: 0.1rem;
+      line-height: 1.5;
+      max-width: 45ch;
     }
   }
   @media (hover: hover) {
@@ -334,6 +418,16 @@
     }
     address a:hover, address a:focus {
       color: var(--color3);
+    }
+    .description a:hover, .description a:focus {
+      background-color: var(--color1);
+      color: var(--color2);
+      text-decoration: none;
+    }
+    .note a:hover, .note a:focus {
+      background-color: var(--color1-4);
+      color: var(--color2);
+      text-decoration: none;
     }
   }
 </style>
