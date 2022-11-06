@@ -1,172 +1,175 @@
 <!-- SCRIPTS ///////////////////////////////////////////////// -->
 <script>
 
-  // IMPORT COMPONENTS ---------------------------------------
-  import ExpandableList from "../ExpandableList.svelte";
-
-  // PROPS ---------------------------------------------------
-  export let main;
-
-  // LOCAL SETTINGS ----------------------------------------------
-  let sections = [
-    "Contact Info",
-    "Experience",
-    "Projects",
-    "Technologies",
-    "Skills",
-    "Education",
-    "Career Goals",
-  ];
-
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////// -->
-<ExpandableList>
-  <div id="area1" slot="main-list" 
-    let:selectItem={selectItem} let:currentSelected={currentSelected}
-  >
-    <h2>
-      CV
-      <span>*Click an option to learn more</span>
-    </h2>
-    <ul>
-      {#each sections as section, index}
-      <li>
-        <button class="main-list-button" on:click={()=> selectItem(index)} type="button" class:selected={currentSelected === index}>{section}</button>
-      </li>
-      {/each}
-    </ul>
-  </div>
+<div id="background">
+  <header id="page-header">
+    <h2>CV</h2>
+    <p><a id="download-link" href="" download>Download pdf version</a></p>
+  </header>
+  <section id="cv">
+    <header>
+      <h3>Andrij Radio</h3>
+      <p>Front-End Web-Developer</p>
+      <p>Creative web-developer,<br class:no-display={window.innerWidth > 1000} /> passionate about design,<br class:no-display={window.innerWidth > 1000} /> aesthetics and cutting-edge tech.</p>
+    </header>
+    <address>
+      <ul>
+        <div>
+          <li>
+            <a href="https://github.com/Driijko" target="_blank" rel="noopener noreferrer">
+              <svg id="github-logo" viewBox="0 0 496 512">
+                <title>Github Profile</title>
+                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+              </svg>
+              github.com/Driijko
+            </a>
+          </li>
+          <li>
+            <a href="mailto:dreekodev@gmail.com" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 512 512">
+                <title>Email</title>
+                <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+              </svg>
+              dreekodev@gmail.com
+            </a>
+          </li>
+        </div>
+        <div>
+          <li>
+            <a href="tel:4167009363" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 512 512">
+                <title>Phone</title>
+                <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+              </svg>
+              416-700-9363
+            </a>
+          </li>
+          <li>
+            <a href="https://www.google.com/maps/place/Toronto,+ON/@43.7183953,-79.6582295,10z/data=!3m1!4b1!4m5!3m4!1s0x89d4cb90d7c63ba5:0x323555502ab4c477!8m2!3d43.653226!4d-79.3831843" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 384 512">
+                <title>Location</title>
+                <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/>
+              </svg>
+              Toronto, Canada
+            </a>
+          </li>
+        </div>
 
-  <div id="area2" slot="selected-list-item" 
-    let:closeArea2={closeArea2} let:currentSelected={currentSelected}
-  >
-    {#if currentSelected === 0}
-    {:else if currentSelected === 1}
-    {:else if currentSelected === 2}
-    {:else if currentSelected === 3}
-    {:else if currentSelected === 4}
-    {:else if currentSelected === 5}
-    {:else if currentSelected === 6}
-    {/if}
-    <button id="close-area2" type="button" on:click={closeArea2}>X</button>
-  </div>
-</ExpandableList>
+      </ul>
+    </address>
+  </section>
+</div>
+
 
 <!-- STYLE //////////////////////////////////////////////////////// -->
 <style>
-  #area1, #area2 {
-    height: 100%;
+  .no-display {
+    display: none;
   }
-  #area1 {
-    padding: 1rem;
-    background-color: var(--color2);
-    opacity: 0;
-    animation: fade-in 2s 1s forwards ease-out;
+  #background {
+    background-color: var(--color1-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+  }
+  #page-header {
+    line-height: 1.5;
   }
   h2 {
-    background-color: var(--color1-1);
-    color: var(--color2) ;
     font-family: "Julius Sans One", sans-serif;
-    font-size: 2rem;
+    color: var(--color2);
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 20%;
-    line-height: 1.5;
-    border-radius: 0.3rem 0.3rem 0 0;
-    position: relative;
   }
-  h2 span {
-    position: absolute;
+  #download-link {
+    color: var(--color3-1);
+    display: block;
+  }
+  #cv {
+    background-color: var(--color2);
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 0.8rem;
-    animation: fade-out 5s 4s ease-out forwards;
-    bottom: 0%;
   }
-  ul {
-    border: 0.3rem solid var(--color1-1);
-    height: 80%;
+  #cv header {
+    background-color: var(--color2-3);
+    color: var(--color1);
     display: flex;
     flex-direction: column;
-    border-radius: 0 0 0.3rem 0.3rem;
-  }
-  li {
-    border: 0.2rem solid var(--color1-1);
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex: 1;
-    background-color: var(--color1-2);
+    row-gap: 1rem;
+    padding: 1rem;
   }
-  .main-list-button {
-    border: 0.1rem solid var(--color2);
-    width: 10rem;
-    font-size: 1.4rem;
-    border-radius: 0.3rem;
+  h3 {
+    font-size: 2rem;
+  }
+  #cv header p:nth-of-type(1) {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  address {
     background-color: var(--color1);
     color: var(--color2);
-    transition-property: width, height, font-size, background-color;
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
   }
-  @media (hover:hover) {
-    .main-list-button:hover:not(.selected), .main-list-button:focus:not(.selected) {
-      background-color: var(--color3);
-      transform: scale(1.15);
-    }
-    .main-list-button.selected {
-      border-radius:0;
-      width: 100%;
-      height: 100%;
-      font-size: 2rem;
-      border-color: transparent;
-      cursor: default;
-      color: var(--color2);
-      transform: scale(1);
-      background-color: var(--color1);
-    }
+  address ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1.5rem;
   }
+  address ul div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1.5rem;
+  }
+  address li {
+    padding: 0.25rem 0;
+  }
+  #github-logo {
+    width: 1.5rem;
+  }
+  address a {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    column-gap: 0.5rem;
+  }
+
   @media screen and (orientation: portrait) {
-    #area2 {
-      position: relative;
-      border-top: 0.3rem solid var(--color2-1);
+    #background {
+      padding: 1rem 0.5rem;
     }
-    #close-area2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background-color: var(--color1);
-      color: var(--color2);
-      font-size: 2rem;
-      font-weight: bold;
-      height: 10%;
-      width: calc(var(--viewport-height)/10);
-      border-left: 0.3rem solid var(--color2-1);
+    #cv {
+      width: 100%;
     }
-  }
-  @media (hover:hover) and (orientation: portrait) {
-    #close-area2:hover, #close-area2:focus {
-      color: var(--color3);
-      background-color: var(--color1-1);
+    #cv header {
+      line-height: 1.2;
     }
   }
   @media screen and (orientation: landscape) {
-    #area2 {
-      border: 0.5rem solid var(--color1);
-      background-color: var(--color1);
-      opacity: 0;
-      animation: fade-in 2s 2s forwards ease-out;
+    #background {
+      padding: 4rem;
     }
-
-    #close-area2 {
-      display: none;
+    #cv {
+      aspect-ratio: 8.5 / 11;
+      width: 40rem;
+    }
+  }
+  @media (hover: hover) {
+    #download-link:hover, #download-link:focus {
+      color: var(--color3);
+      /* transform: scale(1.2); */
+    }
+    #cv header p:nth-of-type(2) {
+      font-size: 0.8rem;
+    }
+    address a:hover, address a:focus {
+      color: var(--color3);
     }
   }
 </style>

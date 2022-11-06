@@ -37,6 +37,8 @@
       <Technology />
     {/key}
   {:else if $currentPageName === "cv"}
-    <CVPage />
+    {#key $resetCount}
+      <CVPage />
+    {/key}
   {/if}
 </div>

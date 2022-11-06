@@ -20,7 +20,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
-<div bind:this={page} class="page">
+<div bind:this={page} class="page regular-scroll">
   <CVMainLayer />
   <SiteMenuModal />
 </div>

@@ -271,12 +271,15 @@ html {
   --color1: hsl(220, 100%, 10%);
   --color1-1: hsl(220, 100%, 20%);
   --color1-2: hsl(220, 100%, 70%);
+  --color1-3: hsl(220, 100%, 5%);
   --color2: hsl(50, 100%, 80%);
   --color2-1: hsl(50, 100%, 90%);
   --color2-2: hsl(50, 100%, 8%);
+  --color2-3: hsl(50, 100%, 60%);
   --color3: hsl(0, 100%, 50%);
   --color3-1: hsl(0, 100%, 35%);
   --color3-2: hsl(0, 100%, 50%, 0.5);
+  --color3-3: hsl(0, 100%, 70%);
   color: var(--color1);
   background-color: var(--color2);
 }
