@@ -1,7 +1,11 @@
 <!-- SCRIPTS ///////////////////////////////////////////////// -->
 <script>
-    import Gsap from "../technology/GSAP.svelte";
+  // IMPORT SCRIPTS ---------------------------------------------
+  import { slide } from "svelte/transition";
 
+  // SITE STATE -------------------------------------------------
+  const viewportOrientation = window.innerWidth >= window.innerHeight ?
+    "landscape" : "portrait";
 
   // LOCAL STATE -------------------------------------------------
   const cvSectionsOpen = [false, false, false, false, false, false, false];
@@ -110,14 +114,18 @@
             </button>
           </header>
 
-          <section class="cv-sub-section">
-            <h5>Freelance Web Developer</h5>
-            <p class="date">06/2020 - Present</p>
-            <p class="description">
-              Design, build and deploy web-sites from the ground-up, including custom layouts, icons and animations. Communicate with clients with a variety of interests to achieve specific goals, as well as re-designing based on changing interests.
-            </p>
-          </section>
-
+          {#if cvSectionsOpen[0] || viewportOrientation === "landscape"}
+            <div transition:slide>
+              <section class="cv-sub-section">
+                <h5>Freelance Web Developer</h5>
+                <p class="date">06/2020 - Present</p>
+                <p class="description">
+                  Design, build and deploy web-sites from the ground-up, including custom layouts, icons and animations. Communicate with clients with a variety of interests to achieve specific goals, as well as re-designing based on changing interests.
+                </p>
+              </section>
+            </div>
+          {/if}
+        
         </section>
 
         <section class="cv-section">
@@ -169,7 +177,6 @@
     display: block;
   }
   #cv {
-    background-color: var(--color2);
     font-family: "Montserrat", sans-serif;
   }
   #cv-header {
@@ -239,18 +246,13 @@
     }
     #cv {
       width: 100%;
+      background-color: var(--color1-1);
     }
     #cv-header {
       line-height: 1.2;
     }
     .cv-section {
       border: 0.3rem solid var(--color1);
-      transition: height 0.5s ease-out;
-      overflow: hidden;
-      height: 3.75rem;
-    }
-    #cv-section1.open {
-      height: 20rem;
     }
     .cv-section > header {
       background-color: var(--color2-1);
@@ -281,6 +283,9 @@
       stroke: var(--color1);
       stroke-width: 15;
     }
+    .cv-section > div {
+      background-color: var(--color2);
+    }
     .cv-sub-section {
       padding: 1rem;
     }
@@ -292,6 +297,7 @@
     #cv {
       aspect-ratio: 8.5 / 11;
       width: 40rem;
+      background-color: var(--color2);
     }
     #column-container {
       padding: 1rem;
