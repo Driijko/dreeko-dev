@@ -1,8 +1,9 @@
 <!-- SCRIPTS ///////////////////////////////////////////////// -->
 <script>
   // IMPORT SCRIPTS ---------------------------------------------
-  import { transition_in } from "svelte/internal";
-import { slide } from "svelte/transition";
+  import { slide } from "svelte/transition";
+  import { pageExit } from "../../stores/site.js";
+
 
   // SITE STATE -------------------------------------------------
   const viewportOrientation = window.innerWidth >= window.innerHeight ?
@@ -42,9 +43,21 @@ import { slide } from "svelte/transition";
 <div id="background">
   <header id="page-header">
     <h2>CV</h2>
-    <p><a id="download-link" href="" download>Download pdf version</a></p>
+    <p><a id="download-link" href={null} download>Download pdf version</a></p>
   </header>
   <section id="cv">
+
+    <svg id="svg-art" viewBox="0 0 1120 179.4" >
+      <circle cx="1120" cy="0" r="300" fill="hsl(220, 100%, 10%)"
+        stroke="hsl(50, 100%, 80%)" stroke-width="10"
+      />
+      <circle cx="1120" cy="0" r="170" fill="hsl(220, 100%, 10%)"
+        stroke="hsl(50, 100%, 80%)" stroke-width="10"
+      />
+      <circle cx="1120" cy="0" r="100" fill="hsl(220, 100%, 10%)"
+        stroke="hsl(50, 100%, 80%)" stroke-width="10"
+      />
+    </svg>
 
     <header id="cv-header">
       <h3>Andrij Radio</h3>
@@ -144,33 +157,33 @@ import { slide } from "svelte/transition";
 
           {#if cvSectionsOpen[1] || viewportOrientation === "landscape"}
             <div transition:slide>
-              <p class="note">* For more details: <a href={null}>portfolio page</a> </p>
+              <p class="note">* For more details: <a href={null} on:click|preventDefault={()=> pageExit("portfolio")}>portfolio page</a> </p>
               <section class="cv-sub-section">
                 <h5>Therapist Professional Profile</h5>
                 <p class="date">01/2022 - Present</p>
                 <p class="description">
-                  Profile page for the private practice of Toronto therapist Tara McMahon. Developed a visual design utilizing linear gradients and textures to produce a relaxing, friendly, yet professional tone. Animated page entrances that reinforce semantic design. Logo design. <a href="https://driijko.github.io/tara-mcmahon">Visit website.</a>
+                  Profile page for the private practice of Toronto therapist Tara McMahon. Developed a visual design utilizing linear gradients and textures to produce a relaxing, friendly, yet professional tone. Animated page entrances that reinforce semantic design. Logo design. <a href="https://driijko.github.io/tara-mcmahon" target="_blank" rel="noopener noreferrer">Visit website.</a>
                 </p>
               </section>
               <section class="cv-sub-section">
                 <h5>Radio-Play Streaming Site</h5>
                 <p class="date">08/2021 - 02/2022</p>
                 <p class="description">
-                  Website for streaming the sci-fi radio-play Caretakers of the Waiting, with customized animations accompanying each act of the play. Use of SVG and GSAP3 animation library. <a href="https://driijko.github.io/caretakers-of-the-waiting">Visit website.</a>
+                  Website for streaming the sci-fi radio-play Caretakers of the Waiting, with customized animations accompanying each act of the play. Use of SVG and GSAP3 animation library. <a href="https://driijko.github.io/caretakers-of-the-waiting" target="_blank" rel="noopener noreferrer">Visit website.</a>
                 </p>
               </section>
               <section class="cv-sub-section">
                 <h5>Music Group Album Profile</h5>
                 <p class="date">01/2022 - 03/2022</p>
                 <p class="description">
-                  Website for streaming the album <i>mood</i> by Toronto group <em>nonono</em>. Customized and animated multi-track audio/animation player, with distinct animations for each album track. Use of SVG, and GSAP3 animation library. <a href="https://driijko.github.io/nonono-mood">Visit website.</a>
+                  Website for streaming the album <i>mood</i> by Toronto group <em>nonono</em>. Customized and animated multi-track audio/animation player, with distinct animations for each album track. Use of SVG, and GSAP3 animation library. <a href="https://driijko.github.io/nonono-mood" target="_blank" rel="noopener noreferrer">Visit website.</a>
                 </p>
               </section>
               <section class="cv-sub-section">
-                <h5>Essay on Piet Mondrian</h5>
+                <h5>Web-Essay on Piet Mondrian</h5>
                 <p class="date">10/2021 - 05/2022</p>
                 <p class="description">
-                  Website hosting a multi-chapter essay on the life and art of famous abstract painter Piet Mondrian. Visual design and animations apply Mondrian's aesthetic to web-design style and layout. <a href="https://driijko.github.io/mondrian">Visit website.</a>
+                  Website hosting a multi-chapter essay on the life and art of famous abstract painter Piet Mondrian. Visual design and animations apply Mondrian's aesthetic to web-design style and layout. <a href="https://driijko.github.io/mondrian" target="_blank" rel="noopener noreferrer">Visit website.</a>
                 </p>
               </section>
             </div>
@@ -221,7 +234,7 @@ import { slide } from "svelte/transition";
           {#if cvSectionsOpen[3] || viewportOrientation === "landscape"}
             <div transition:slide>
               <p class="note">
-                For more details: <a href={null} >technology page.</a>
+                For more details: <a href={null} on:click|preventDefault={()=> pageExit("technology")}>technology page.</a>
               </p>
               <ul id="technology-list">
                 <li>
@@ -415,10 +428,10 @@ import { slide } from "svelte/transition";
     justify-content: center;
     align-items: center;
     row-gap: 1rem;
+    min-height: calc(100vh - 7.5rem);
   }
   #page-header {
     line-height: 1.5;
-    display: none;
   }
   h2 {
     font-family: "Julius Sans One", sans-serif;
@@ -442,7 +455,6 @@ import { slide } from "svelte/transition";
     justify-content: center;
     row-gap: 1rem;
     padding: 1rem;
-    display: none;
   }
   h3 {
     font-size: 2rem;
@@ -454,22 +466,23 @@ import { slide } from "svelte/transition";
   address {
     background-color: var(--color1);
     color: var(--color2);
-    display: none;
   }
   address ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     column-gap: 1.5rem;
   }
   address ul div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     column-gap: 1.5rem;
   }
   address li {
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
   }
   #github-logo {
     width: 1.5rem;
@@ -517,6 +530,9 @@ import { slide } from "svelte/transition";
       width: 100%;
       background-color: var(--color1-1);
     }
+    #svg-art {
+      display: none;
+    }
     #cv-header {
       line-height: 1.2;
     }
@@ -524,7 +540,7 @@ import { slide } from "svelte/transition";
       border: 0.3rem solid var(--color1);
     }
     .cv-section > header {
-      background-color: var(--color2-1);
+      background-color: var(--color2-3);
       display: flex;
       justify-content: space-between;
       align-items:center;
@@ -542,6 +558,7 @@ import { slide } from "svelte/transition";
       align-items: center;
       border-radius: 0.3rem;
       width: 2rem;
+      background-color: var(--color2-1);
     }
     .cv-section > header button svg {
       width: 100%;
@@ -569,9 +586,14 @@ import { slide } from "svelte/transition";
       padding: 4rem;
     }
     #cv {
-      aspect-ratio: 8.5 / 11;
+      position: relative;
       width: 50rem;
       background-color: var(--color2);
+    }
+    #svg-art {
+      position: absolute;
+      pointer-events: none;
+      width: 50rem;
     }
     #column-container {
       padding: 1rem;

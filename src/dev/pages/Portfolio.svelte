@@ -24,7 +24,7 @@
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={page} class="page">
-  <Pamphlet totalSnapPointsOptions={[6, 6]}>
+  <Pamphlet totalSnapPointsOptions={[7, 7]}>
     <SiteHeader />
     <PortfolioMain />
     <SiteFooter />
