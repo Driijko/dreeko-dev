@@ -3,7 +3,6 @@
   // IMPORT SCRIPTS ---------------------------------------------------
   import { onMount } from "svelte";
 
-
   // LIFECYCLE --------------------------------------------------------
   onMount(()=> {
     const tl = gsap.timeline();
