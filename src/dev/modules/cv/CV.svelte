@@ -429,9 +429,13 @@
     align-items: center;
     row-gap: 1rem;
     min-height: calc(100vh - 7.5rem);
+    opacity: 0;
+    animation: fade-in 2s ease-out forwards;
   }
   #page-header {
     line-height: 1.5;
+    opacity: 0;
+    animation: fade-in 2s 2s ease-out forwards;
   }
   h2 {
     font-family: "Julius Sans One", sans-serif;
@@ -446,6 +450,8 @@
   }
   #cv {
     font-family: "Montserrat", sans-serif;
+    opacity: 0;
+    animation: fade-in 4s 3s ease-in forwards;
   }
   #cv-header {
     background-color: var(--color2-3);
