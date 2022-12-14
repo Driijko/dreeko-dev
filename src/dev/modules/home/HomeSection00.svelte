@@ -1,15 +1,16 @@
 <!-- MARKUP /////////////////////////////////////////////// -->
 <section>
   <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-    <polygon points="50 0 100 20 100 0" />
-    <polygon points="0 80 50 100 0 100" />
+    <polygon class="portrait" points="50 0 100 20 100 0" />
+    <polygon class="portrait" points="0 80 50 100 0 100" />
+    <polygon class="landscape" points="0 30 49.9 0 49.9 100 0 70" />
   </svg>
   <div id="top-text">
-    <h2>Introduction:</h2>
-    <p>Hello, my name is <em>Andrij Radio</em>,<br/> but my friends call me <span id="name">Dreeko</span></p>
+    <h3>Introduction:</h3>
+    <p>Hello, my name is <em>Andrij Radio</em>,<br/> but my friends call me: <span id="name">Dreeko</span></p>
   </div>
   <img src="/home/pic0.jpg" alt="Web-developer Dreeko."/>
-  <p id="skills">I'm a <em>front-end web-developer</em><br/>and <em>designer</em>. </p>
+  <p id="skills">I'm a <em>front-end web-developer </em><br class="portrait"/>and <em>designer</em>. </p>
 </section>
 
 
@@ -38,7 +39,7 @@
     row-gap: 0.5rem;
     padding-left: 0.5rem;
   }
-  h2 {
+  h3 {
     font-size: 1.3em;
     text-decoration: underline;
   }
@@ -53,7 +54,7 @@
     font-weight: bold;
     font-size: 1.5em;
     text-align: center;
-    margin-left: 0.3em;
+    margin-left: 0.1em;
   }
   #skills {
     padding-top: 0.3em;
@@ -65,6 +66,36 @@
   @media screen and (orientation: portrait) and (min-width: 600px) {
     section {
       font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (orientation: portrait) {
+    img {
+      background-color: var(--color1-3);
+      max-height: 70%;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    img {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      max-width: 50%;
+      background-color: var(--color1);
+      padding: 2em;
+    }
+    #top-text {
+      position: relative;
+      color: var(--color2);
+      padding-left: 5em;
+    }
+    #skills {
+      text-align: left;
+      padding-left: 5em;
+      line-height: 2;
+      color: var(--color2);
+      position: relative;
     }
   }
 
