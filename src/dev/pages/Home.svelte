@@ -22,9 +22,9 @@
   // TRACKING  ------------------------------------------------
   function trackCurrentSnapPoint(snapPoint) {
     if (window.innerWidth < window.innerHeight) {
-      if (snapPoint > 1 && snapPoint < 4) {
+      if (snapPoint > 2 && snapPoint < 5) {
         overlayVisible = 1;
-      } else if (snapPoint > 3 && snapPoint < 7) {
+      } else if (snapPoint > 4 && snapPoint < 8) {
         overlayVisible = 2;
       } else {
         overlayVisible = 0;
@@ -41,7 +41,7 @@
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={home} class="page">
   <Pamphlet {trackCurrentSnapPoint}
-    totalSnapPointsOptions={[7, 10]}
+    totalSnapPointsOptions={[8, 11]}
   >
     <SiteHeader />
     <HomeMain />
