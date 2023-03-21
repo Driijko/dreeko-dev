@@ -1,11 +1,48 @@
+<!-- SCRIPTS //////////////////////////////////////////////////////// -->
+<script>
+  import { onMount } from "svelte";
+
+  onMount(()=> {
+    const tl = gsap.timeline({repeat:-1});
+    tl.to("#pattern1 path", {
+      duration: 2, ease: "linear",
+      attr: {d: "M 0,100 L 0,0 L 100,0,Z"}
+    }, 0);
+    tl.to("#pattern1 path", {
+      duration: 2, ease: "linear",
+      attr: {d: "M 0,100 L 100,100 L 100,0,Z"}
+    }, 2);
+    tl.to("#pattern1 path", {
+      duration: 2, ease: "linear",
+      attr: {d: "M 0,100 L 100,100 L 0,0,Z"}
+    }, 4);
+  });
+</script>
+
 <!-- MARKUP //////////////////////////////////////////////////////// -->
 <section>
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none" >
+    <rect x="55" y="0" width="45" height="30" />
+    <rect x="0" y="70" width="45" height="30" />
+  </svg>
+  <svg viewBox="0 0 900 1600" preserveAspectRatio="none">
+    <defs>
+      <pattern id="pattern1" viewBox="0 0 100 100" width="10%" height="10%">
+        <path 
+          d="M 0,100
+          L 0,0
+          L 100,100
+        z"/>
+      </pattern>
+    </defs>
+    <rect fill="url(#pattern1)" x="0" y="0" width="900" height="1600" />
+  </svg>
   <h3>Things I am Good At:</h3>
   <p>
-    <span ><span id="num">1 . )</span>Making websites that are:</span>
-    <span>stylish,</span>
-    <span>user friendly</span>
-    <span>and flowing.</span>
+    <span ><em>1 . )</em> Making websites that are:</span>
+    <span>stylish...</span>
+    <span>... user friendly ...</span>
+    <span>... and <span>flowing.</span></span>
   </p>
 </section>
 
@@ -13,6 +50,29 @@
 <style>
   section {
     height: var(--viewport-height);
+    position: relative;
+  }
+  svg {
+    position: absolute;
+  }
+  section svg:nth-of-type(1) {
+    width: 100%;
+    height: 80%;
+    top: 20%;
+    background-color: var(--color1-1);
+  }
+  section svg:nth-of-type(1) rect {
+    fill: var(--color1);
+  }
+  section svg:nth-of-type(2) {
+    top: 0%;
+    width: 100%;
+    height: 100%;
+  }
+  #pattern1 path {
+    fill: var(--color1-1);
+    stroke: var(--color1);
+    stroke-width: 5;
   }
   h3 {
     display: flex;
@@ -20,22 +80,45 @@
     align-items: center;
     height: 20%;
     font-size: 1.5em;
+    background-color: var(--color2-4);
+    position: relative;
   }
-  span {
-    text-align: center;
-  }
-  #num {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-  }
+
   p {
+    height: 80%;
+    font-size: 1.5em;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 80%;
-    justify-content: space-evenly;
-    border: 4px solid red;
-    font-size: 1.5em;
+    justify-content: space-around;
   }
+  p > span {
+    /* position: absolute; */
+    background-color: var(--color2-4);
+    padding: 2%;
+    border-radius: 5px;
+    text-align: center;
+  }
+  p span:nth-of-type(2) {
+    font-family: "Rowdies";
+  }
+  p span:nth-of-type(4) span {
+    font-family: "Courgette"
+  }
+  /* p span:nth-of-type(1) {
+    left: 2%;
+    top: 10%;
+  }
+  p span:nth-of-type(2) {
+    left: 35%;
+    top: 35%;
+  }
+  p span:nth-of-type(3) {
+    left: 50%;
+    top: 60%;
+  }
+  p span:nth-of-type(4) {
+    left: 50%;
+    top: 85%;
+  } */
 </style>

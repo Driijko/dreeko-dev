@@ -6,7 +6,7 @@
 <!-- MARKUP ------------------------------------------------------ -->
 <PortfolioItem 
   logoData={[
-    "./portfolio/caretakers-logo.webp", 
+    "./portfolio/confinementandcontagion-logo.png", 
     "Confinement and Contagion."
   ]}
   genericDescriptor={"Art Exhibit & <br/>Workshop Series"}
