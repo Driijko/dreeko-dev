@@ -1,6 +1,6 @@
 <!-- MARKUP /////////////////////////////////////////////////// -->
 <section>
-  <h3>Optimized for High Performance</h3>
+  <h3>3.) Optimized for High Performance</h3>
   <ul>
     <li>
       <div class="animation">
@@ -18,8 +18,11 @@
     </li>
     <li>
       <div id="animation-container2" class="animation">
-        <div id="animation5">Me</div>
-        <div id="animation6">No<br/> Me</div>
+        <div id="animation5"></div>
+        <div id="animation6">
+          <div>Enter</div>
+          <div>Exit</div>
+        </div>
       </div>
       <h4>Smooth Transitions</h4>
     </li>
@@ -138,32 +141,59 @@
   #animation4 svg {
     width: 10rem;
   }
-  @keyframes shuffle {
-    0% {transform:translate(0%);}
-    25% {transform: translate(0%);}
-    50% {transform: translate(-180%);}
-    75% {transform: translate(-180%);}
-    100% {transform: translate(0%);}
-  }
+
   #animation5, #animation6 {
     width: 60%;
     border: none;
-    opacity: 0.9;
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    gap: 1em;
     color: var(--color2);
     font-size: 4rem;
-    background-color: var(--color1-1);
+  }
+  @keyframes animation5 {
+    0% {opacity: 0; transform: rotateY(720deg) scale(1);}
+    35% {opacity: 0.7;}
+    50% {transform: rotateY(0deg) scale(1.5);}
+    65% {opacity: 0.7;}
+    100% {opacity: 0; transform: rotateY(720deg) scale(1);}
   }
   #animation5 {
-    animation: shuffle 2.5s 0.2s ease-in-out infinite;
+    transform: rotateY(720deg);
+    animation: animation5 8s infinite;
+    background-color: var(--color1-2);
+  }
+  @keyframes animation6 {
+    0% {opacity: 0; transform: rotateX(720deg);}
+    35% {opacity: 0.8;}
+    50% {transform: rotateX(0deg);}
+    65% {opacity: 0.8;}
+    100% {opacity: 0; transform: rotateX(720deg);}
   }
   #animation6 {
-    left: 130%;
-    animation: shuffle 2.5s ease-in-out infinite;
+    animation: animation6 8s infinite;
+    transform: rotateX(720deg);
+    background-color: var(--color1-2);
   }
+  @keyframes colorchange {
+    0% {color: var(--color1-5);}
+    45% {color: var(--color1-5);}
+    46% {color: var(--color2);}
+    100% {color: var(--color2);}
+  }
+  #animation6 > div:nth-of-type(1) {
+    color: var(--color2);
+    animation: colorchange 8s 3.5s infinite;
+  }
+  #animation6 > div:nth-of-type(2) {
+    color: var(--color1-5);
+    animation: colorchange 8s infinite;
+  }
+
   #smartphone {
     position: absolute;
     width: 100%;
@@ -268,7 +298,6 @@
       height: 25vw;
     }
     #animation-container2 {
-      overflow: hidden;
       width: 100%;
     }
     h4 {
@@ -291,13 +320,6 @@
       50% {transform: translate(-130%);}
       75% {transform: translate(-130%);}
       100% {transform: translate(0%);}
-    }
-    #animation5 {
-      animation: shuffle2 2.5s 0.2s ease-in-out infinite;
-    }
-    #animation6 {
-      left: 100%;
-      animation: shuffle2 2.5s ease-in-out infinite;
     }
     #speech {
       font-size: 1.8vw;

@@ -49,11 +49,11 @@
   </Pamphlet>
 
   <p aria-hidden="true" class:overlay-visible={overlayVisible === 1}>
-    Pixel-Perfect <br/> Responsive Design
+    2.) Pixel-Perfect <br/> Responsive Design
   </p>
 
   <p aria-hidden="true" class:overlay-visible={overlayVisible === 2}>
-    Optimized for <br/> High Performance
+    3.) Optimized for <br/> High Performance
   </p>
   <SiteMenuModal />
 </div>
