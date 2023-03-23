@@ -10,6 +10,7 @@
   import Portfolio from "./pages/Portfolio.svelte";
   import Technology from "./pages/Technology.svelte";
   import CVPage from "./pages/CVPage.svelte";
+  import AboutPage from "./pages/AboutPage.svelte";
 
   // RUN SCRIPTS ----------------------------------------------------
   setUp();
@@ -39,6 +40,10 @@
   {:else if $currentPageName === "cv"}
     {#key $resetCount}
       <CVPage />
+    {/key}
+  {:else if $currentPageName === "about"}
+    {#key $resetCount}
+      <AboutPage />
     {/key}
   {/if}
 </div>

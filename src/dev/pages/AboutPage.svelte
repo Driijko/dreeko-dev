@@ -6,9 +6,8 @@
   // IMPORT STORES --------------------------------------------------
   import { currentPage } from "../stores/site.js";
 
-  // IMPORT COMPONENTS ---------------------------------------------
-  import CVMainLayer from "../layers/CVMainLayer.svelte";
-  import SiteMenuModal from "../layers/SiteMenuModal.svelte";
+  // IMPORT COMPONENTS -----------------------------------------------
+  import AboutMainLayer from "../layers/AboutMainLayer.svelte";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
   let page;
@@ -21,6 +20,10 @@
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={page} class="page regular-scroll">
-  <CVMainLayer />
-  <SiteMenuModal />
+  <AboutMainLayer />
 </div>
+
+<!-- STYLES ///////////////////////////////////////////////// -->
+<style>
+
+</style>

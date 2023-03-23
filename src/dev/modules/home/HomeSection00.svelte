@@ -9,7 +9,7 @@
     <h3>Introduction:</h3>
     <p>Hello, my name is <em>Andrij Radio</em>,<br/> but my friends call me: <span id="name">Dreeko</span></p>
   </div>
-  <img src="/home/pic0.jpg" alt="Web-developer Dreeko."/>
+  <img src="./home/pic0.webp" alt="Web-developer Dreeko."/>
   <p id="skills">I'm a <em>front-end web-developer </em><br class="portrait"/>and <em>designer</em>. </p>
 </section>
 
