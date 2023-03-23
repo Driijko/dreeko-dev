@@ -55,10 +55,10 @@
     {/if}
   <h3>My Specialities:</h3>
   <p>
-    <span ><em>1 . </em><br/><br/> Making websites that are...</span>
-    <span>... stylish ...</span>
-    <span>... user friendly ...</span>
-    <span>... and<br/> <span>flowing.</span></span>
+    <span ><em>1 . </em><br/><br/> Making websites that are:</span>
+    <span>stylish</span>
+    <span>user friendly</span>
+    <span>and<br/> <span>flowing.</span></span>
   </p>
 </section>
 
@@ -111,7 +111,6 @@
     font-size: 2em;
   }
   p > span {
-    /* position: absolute; */
     background-color: var(--color2-5);
     padding: 2%;
     text-align: center;
@@ -138,11 +137,11 @@
       top: 50%;
     }
     p span:nth-of-type(3) {
-      left: 35%;
+      left: 30%;
       top: 62%;
     }
     p span:nth-of-type(4) {
-      left: 67%;
+      left: 58%;
       top: 43%;
     }
   }

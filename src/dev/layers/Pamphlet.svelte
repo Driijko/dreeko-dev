@@ -72,7 +72,7 @@
 
   // LIFECYCLE -------------------------------------------------
   onMount(()=> {
-    currentSnapPoint = 5;
+    currentSnapPoint = 1;
     snap(true,false);
 
     // EVENTS LISTENERS --------------------

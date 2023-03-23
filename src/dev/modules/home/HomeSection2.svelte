@@ -18,6 +18,7 @@
     </li>
     <li>
       <div id="animation-container2" class="animation">
+        <div id="animation5-1"></div>
         <div id="animation5"></div>
         <div id="animation6">
           <div>Enter</div>
@@ -141,11 +142,7 @@
   #animation4 svg {
     width: 10rem;
   }
-
-  #animation5, #animation6 {
-    width: 60%;
-    border: none;
-    opacity: 0;
+  #animation6 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,43 +152,60 @@
     color: var(--color2);
     font-size: 4rem;
   }
+  #animation5-1, #animation5, #animation6 {
+    width: 60%;
+    border: none;
+    opacity: 0;
+  }
+  @keyframes animation5-1 {
+    0% {opacity: 0; transform: rotateZ(720deg) scale(0); background-color: var(--color1-2);}
+    45% {opacity: 0.5;}
+    50% {transform: rotateY(0deg) scale(1.5); background-color: hsl(180, 100%, 50%);}
+    55% {opacity: 0.5;}
+    100% {opacity: 0; transform: rotateY(720deg) scale(0); background-color: var(--color1-2);}    
+  }
+  #animation5-1 {
+    transform: rotateZ(720deg);
+    animation: animation5-1 6s infinite;
+    background-color: var(--color1-2);
+  }
   @keyframes animation5 {
-    0% {opacity: 0; transform: rotateY(720deg) scale(1);}
-    35% {opacity: 0.7;}
-    50% {transform: rotateY(0deg) scale(1.5);}
-    65% {opacity: 0.7;}
-    100% {opacity: 0; transform: rotateY(720deg) scale(1);}
+    0% {opacity: 0; transform: rotateY(720deg) scale(0);}
+    45% {opacity: 0.7;}
+    50% {transform: rotateY(0deg) scale(1.3);}
+    55% {opacity: 0.7;}
+    100% {opacity: 0; transform: rotateY(720deg) scale(0);}
   }
   #animation5 {
     transform: rotateY(720deg);
-    animation: animation5 8s infinite;
+    animation: animation5 6s infinite;
     background-color: var(--color1-2);
   }
   @keyframes animation6 {
-    0% {opacity: 0; transform: rotateX(720deg);}
-    35% {opacity: 0.8;}
-    50% {transform: rotateX(0deg);}
-    65% {opacity: 0.8;}
-    100% {opacity: 0; transform: rotateX(720deg);}
+    0% {opacity: 0; transform: rotateX(720deg) scale(0); background-color: var(--color1-2);}
+    45% {opacity: 0.8;}
+    50% {transform: rotateX(0deg) scale(1); background-color: var(--color1);}
+    55% {opacity: 0.8;}
+    100% {opacity: 0; transform: rotateX(720deg) scale(0);background-color: var(--color1);}
   }
   #animation6 {
-    animation: animation6 8s infinite;
+    animation: animation6 6s infinite;
     transform: rotateX(720deg);
     background-color: var(--color1-2);
   }
   @keyframes colorchange {
-    0% {color: var(--color1-5);}
-    45% {color: var(--color1-5);}
+    0% {color: var(--color1-1);}
+    45% {color: var(--color1-1);}
     46% {color: var(--color2);}
     100% {color: var(--color2);}
   }
   #animation6 > div:nth-of-type(1) {
     color: var(--color2);
-    animation: colorchange 8s 3.5s infinite;
+    animation: colorchange 6s 2.7s infinite;
   }
   #animation6 > div:nth-of-type(2) {
     color: var(--color1-5);
-    animation: colorchange 8s infinite;
+    animation: colorchange 6s infinite;
   }
 
   #smartphone {
