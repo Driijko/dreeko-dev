@@ -8,7 +8,7 @@
   <div id="sub-container1">
     <h2>About Me</h2>
     <figure>
-      <img src="./about/pic0.jpg" alt="Web developer Andrij Radio, AKA: Dreeko." />
+      <img src="./about/pic0.webp" alt="Web developer Andrij Radio, AKA: Dreeko." />
       <figcaption>Andrij Radio, <span>aka:</span> Dreeko.</figcaption>
     </figure>
   </div>
