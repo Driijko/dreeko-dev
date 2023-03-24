@@ -8,6 +8,7 @@
 
   // IMPORT COMPONENTS -----------------------------------------------
   import AboutMainLayer from "../layers/AboutMainLayer.svelte";
+  import SiteMenuModal from "../layers/SiteMenuModal.svelte";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
   let page;
@@ -21,6 +22,7 @@
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={page} class="page regular-scroll">
   <AboutMainLayer />
+  <SiteMenuModal />
 </div>
 
 <!-- STYLES ///////////////////////////////////////////////// -->
