@@ -374,3 +374,10 @@ dialog {
 @keyframes rotate1 {from {transform: rotate(0);} to{transform: rotate(360deg)}}
 @keyframes scale1 {from{transform: scale(0);}to{transform:scale(1);}}
 @keyframes scale2 {from{transform: scale(1);}to{transform:scale(0);}}
+@keyframes background-shift {
+  0% {background-position: 0% 0%; opacity: 0;}
+  10% {background-position: 10% 10%; opacity: 0.5;}
+  50% {background-position: 50% 50%; opacity: 1;}
+  90% {background-position: 90% 90%; opacity: 0.5;}
+  100% {background-position: 100% 100%; opacity: 0;}
+}

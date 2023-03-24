@@ -46,6 +46,7 @@
       <li class:excluded={$currentPageName === "hire"}>
         <a href={null} 
           class="interface-style2"
+          id="special"
           on:click|preventDefault={()=> pageExit("hire")}
         >Hire</a>
       </li>
@@ -91,6 +92,16 @@ header {
 header > * {
   position: absolute;
 }
+#special {
+  font-weight: bold;
+  color: var(--color3-3);
+}
+@media (hover:hover) {
+  #special:hover, #special:focus {
+    color: var(--color3);
+  }
+}
+
 
 /* CONFIGURATION 1 ////////////////////////// */
 #site-header-area1 {

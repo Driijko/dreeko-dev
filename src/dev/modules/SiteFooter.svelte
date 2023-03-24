@@ -84,13 +84,6 @@
   a:hover, a:focus {
     color: var(--color2);
   }
-  @keyframes background-shift {
-    0% {background-position: 0% 0%; opacity: 0;}
-    10% {background-position: 10% 10%; opacity: 0.5;}
-    50% {background-position: 50% 50%; opacity: 1;}
-    90% {background-position: 90% 90%; opacity: 0.5;}
-    100% {background-position: 100% 100%; opacity: 0;}
-  }
   #background1 {
     background-color: var(--color1);
   }
