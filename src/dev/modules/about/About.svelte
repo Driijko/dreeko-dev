@@ -9,7 +9,7 @@
     <h2>About Me</h2>
     <figure>
       <img src="./about/pic0.webp" alt="Web developer Andrij Radio, AKA: Dreeko." />
-      <figcaption>Andrij Radio, <span>aka:</span> Dreeko.</figcaption>
+      <figcaption>Andrij Radio, <br class="landscape"/><span>aka:</span> Dreeko.</figcaption>
     </figure>
   </div>
   <div id="sub-container2">
@@ -28,6 +28,8 @@
 <style>
   #container {
     position: relative;
+    opacity: 0;
+    animation: fade-in 2s 1s ease-in forwards;
   }
   h2 {
     position: absolute;
@@ -73,6 +75,7 @@
       color: var(--color2);
       gap: 1em;
       padding: 5% 0%;
+      width: 100em;
     }
     #sub-container2 {
       display: flex;
