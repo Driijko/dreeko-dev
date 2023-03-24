@@ -362,6 +362,10 @@ dialog {
     color: var(--color1-2);
     background-color: var(--color1-1);
   }
+  .interface-style7:hover, .interface-style7:focus {
+    color: var(--color2);
+    background-color: var(--color1);
+  }
 }
 
 /* ANIMATIONS /////////////////////////////////////////////////// */
