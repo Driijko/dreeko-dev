@@ -7,7 +7,7 @@
   import { currentPage } from "../stores/site.js";
 
   // IMPORT COMPONENTS -----------------------------------------------
-  import AboutMainLayer from "../layers/AboutMainLayer.svelte";
+  import HireMainLayer from "../layers/HireMainLayer.svelte";
   import SiteMenuModal from "../layers/SiteMenuModal.svelte";
 
   // ELEMENT / COMPONENT REFERENCES ---------------------------------
@@ -21,6 +21,6 @@
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
 <div bind:this={page} class="page regular-scroll">
-  <AboutMainLayer />
+  <HireMainLayer />
   <SiteMenuModal />
 </div>
