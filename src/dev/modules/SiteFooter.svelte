@@ -25,15 +25,16 @@
           on:click|preventDefault={()=> pageExit("technology")}
         >Technology</a>
       </li>
+      <li class:excluded={$currentPageName === "about"}>
+        <a href={null}
+          on:click|preventDefault={()=> pageExit("about")}
+        >About</a>
+      </li>
       <li class:excluded={$currentPageName === "hire"}>
-        <a href={null}  
+        <a href={null} 
+          id="special" 
           on:click|preventDefault={()=> pageExit("hire")}
         >Hire</a>
-      </li>
-      <li class:excluded={$currentPageName === "cv"}>
-        <a href={null}  
-          on:click|preventDefault={()=> pageExit("cv")}
-        >CV</a>
       </li>
     </ul>
   </div>
@@ -91,5 +92,13 @@
     background-image: url("./images/site-footer.webp");
     background-size: 200%;
     animation: background-shift 20s linear infinite;
+  }
+  #special {
+    color: var(--color3-3);
+  }
+  @media (hover:hover) {
+    #special:hover, #special:focus {
+      color: var(--color2-1);
+    }
   }
 </style>

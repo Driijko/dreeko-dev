@@ -35,23 +35,17 @@
               on:click|preventDefault={()=> pageExit("technology", ()=> modals.close("siteMenu"))}
             >Technology</a>
           </li>
-          <li class:excluded={$currentPageName === "hire"}>
-            <a href={null} 
-              class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("hire", ()=> modals.close("siteMenu"))}
-            >Hire</a>
-          </li>
-          <li class:excluded={$currentPageName === "cv"}>
-            <a href={null} 
-              class="interface-style3 center"
-              on:click|preventDefault={()=> pageExit("cv", ()=> modals.close("siteMenu"))}
-            >CV</a>
-          </li>
           <li class:excluded={$currentPageName === "about"}>
             <a href={null} 
               class="interface-style3 center"
               on:click|preventDefault={()=> pageExit("about", ()=> modals.close("siteMenu"))}
             >About</a>
+          </li>
+          <li class:excluded={$currentPageName === "hire"}>
+            <a href={null}
+              class="interface-style3 center"
+              on:click|preventDefault={()=> pageExit("hire", ()=> modals.close("siteMenu"))}
+            >Hire</a>
           </li>
         </ul>
       </nav>
@@ -118,7 +112,6 @@
 .excluded {
   display: none;
 }
-
 
 @media only screen and (min-width: 600px) {
   #site-menu {

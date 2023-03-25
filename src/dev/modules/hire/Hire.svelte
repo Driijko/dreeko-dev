@@ -62,7 +62,7 @@
     padding: 1.5em;
   }
   .background {
-    background-image: url("./images/hire/pic0.webp");
+    background-image: url("../hire/pic0.webp");
     background-size: 200%;
     animation: background-shift 30s linear infinite;
     left: 0;
@@ -118,6 +118,8 @@
     color: var(--color1);
     font-size: 2.5em;
     font-family: "Baloo 2";
+    opacity: 0;
+    animation: fade-in 2s 2s ease-in forwards;
   }
   thead {
     border-bottom: 0.3em solid var(--color2);
