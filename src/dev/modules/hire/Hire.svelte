@@ -20,9 +20,11 @@
   <table>
     <caption>Services</caption>
     <thead>
-      <th>Project</th>
-      <th class="middle-column">Cost</th>
-      <th>Time</th>
+      <tr>
+        <th>Project</th>
+        <th class="middle-column">Cost</th>
+        <th>Time</th>
+      </tr>
     </thead>
     <tr>
       <td>Logo Design</td>
@@ -130,8 +132,12 @@
   thead, tr {
     display: flex;
   }
+  th {
+    flex: 1;
+  }
   tr {
     border-bottom: 0.1em solid var(--color2);
+    width: 100%;
   }
   @media screen and (min-height: 600px) {
     tr {
