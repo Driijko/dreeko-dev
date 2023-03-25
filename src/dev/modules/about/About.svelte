@@ -14,12 +14,12 @@
   </div>
   <div id="sub-container2">
     <p>I'm a freelance web developer living in Toronto, Canada.</p>
-    <p>I'm obsessed with aesthetics and animation. My desire is that when someone comes to one of my websites, their first impression is "wow". Understanding both technology and design allows me to craft unique experiences that help my client's websites stand out. I'm inspired by cutting-edge web design, fine art, and even videogames.</p>
+    <p>I'm obsessed with aesthetics and animation. My desire is that when someone comes to one of my websites, their impression is "wow". Understanding both technology and design allows me to craft unique experiences that help my client's websites stand out. I'm inspired by cutting-edge web design, fine art, and even videogames.</p>
     <p>
       At the same time, presenting information in a way that is clear and easy to navigate is fundamental to good design. My work is about finding a balance between a bold sense of style and providing clarity and ease of use for the user. When these two approaches are properly balanced, the result is to create an immersive, dynamic and satisfying experience: user flow. Check out my <a class="interface-style7" href={null} on:click|preventDefault={()=> pageExit("portfolio")} >portfolio</a> for examples. My goal is always to give someone visiting one of my client's websites an experience they won't soon forget. 
     </p>
     <p>
-      Besides programming and web development, music has been a major focus throughout my life. I've played in several bands in Edmonton, Montreal and Toronto, and toured and recorded. I've DJed at clubs, bars and parties, and I also co-hosted a radio show about music from Africa and the African diaspora. These days I'm mostly focused on playing classical music and writing ambient electronic music.
+      Besides programming and web development, music has been a major passion throughout my life. I've played in several bands in Edmonton, Montreal and Toronto, and toured and recorded. I've DJed at clubs, bars and parties, and I also co-hosted a radio show about music from Africa and the African diaspora. These days I'm mostly focused on playing classical music and writing ambient electronic music.
     </p>
   </div>
 </div>
@@ -75,13 +75,19 @@
       color: var(--color2);
       gap: 1em;
       padding: 5% 0%;
-      width: 100em;
+      flex: 1;
     }
     #sub-container2 {
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 1em;
+      flex: 2.5;
+    }
+    p {
+      max-width: 70ch;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
     }
   }
 </style>
