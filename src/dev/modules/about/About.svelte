@@ -21,6 +21,15 @@
     <p>
       Besides programming and web development, music has been a major passion throughout my life. I've played in several bands in Edmonton, Montreal and Toronto, and toured and recorded. I've DJed at clubs, bars and parties, and I also co-hosted a radio show about music from Africa and the African diaspora. These days I'm mostly focused on playing classical music and writing ambient electronic music.
     </p>
+    <p>
+      All fonts taken from <a class="interface-style7" href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Fonts</a>: <span class="julius">Julius Sans One</span>, <span class="baloo">Baloo 2</span>, <span class="montserrat">Montserrat</span>, and <span class="courgette">Courgette</span>.
+    </p>
+    <p>
+      Some SVG icons take from <a class="interface-style7" href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">Font Awesome</a>.
+    </p>
+    <p>
+      Three images taken from <a class="interface-style7" href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Unsplash</a>, by the following photographers: <a class="interface-style7" href="https://unsplash.com/photos/G9i_plbfDgk" target="_blank" rel="noopener noreferrer">Jeremy Bishop</a>, <a class="interface-style7" href="https://unsplash.com/photos/IGfIGP5ONV0" target="_blank" rel="noopener noreferrer">Anna Pelzer</a>, and <a class="interface-style7" href="https://unsplash.com/photos/vw_gFDCXvMw" target="_blank" rel="noopener noreferrer">Pawel Czerwinski</a>.
+    </p>
   </div>
 </div>
 
@@ -58,6 +67,15 @@
     padding: 1em;
     line-height: 1.3;
   }
+  .julius {
+    font-family: "Julius Sans One", sans-serif;
+  }
+  .baloo {
+    font-family: "Baloo 2", cursive;
+  }
+  .courgette {
+    font-family: "Courgette", cursive;
+  }
   @media screen and (orientation:landscape) {
     #container {
       display: flex;
@@ -81,7 +99,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 1em;
+      /* gap: 0.1em; */
       flex: 2.5;
     }
     p {
